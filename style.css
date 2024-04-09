@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #FBEED7, #D9C19D, #B7966B, #946D43);
+
+}
+
+.logo{
+    top: 0px;
+    left: 0px;
+    display:block;
+    width: 10%;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.container{
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+
+.navbar {
+    width: 80%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-evenly;
+    align-items: center;
+}
