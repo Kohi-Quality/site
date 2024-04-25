@@ -52,6 +52,27 @@ body {
     align-items: center;
 }
 
+.navbar a{
+    color: black;
+    text-decoration: none;
+}
+
+.navbar a:hover{
+    -xpedu-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+}
+
+.navbar .cadastro{
+    width: 150px;
+    height: 40px;
+    align-content: center;
+    text-align: center;
+    background-color: #946D43;
+    color: black;
+    border-radius: 10px;
+    font-weight: bold;
+}
 
 .header .container2{
     display: flex;
@@ -110,8 +131,12 @@ body {
 .section2{
     display: flex;
     width: 100%;
+    height: 600px;
     align-items: start;
     flex-direction: row;
+    background-image: url(./assets/Fundo.png);
+    background-repeat: no-repeat;
+    background-size: contain; 
 }
 
 .section2 .graos{
@@ -215,28 +240,23 @@ body {
 .section5{
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
+    height: 700px;
 }
 
 .section5 h1{
-    display: flex;
     font-size: 30px;
     font-weight: bold;
     color: #556946;
-    justify-content: center;
-    align-items: center;
 }
 
 .section5 .linha_section5 {
     background-color: #556946;
     width: 700px;
-    height: 6px;
+    height: 2px;
 }
 
-.section5{
-    width: 100%;
-    height: 700px;
-}
 
 .section5 .container{
     font-weight: bold;
@@ -252,24 +272,73 @@ body {
 }
 
 .section5 .container_input{
-    color: #53452A;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 50%;
+    width: 450px;
     height: 550px;
+    border-radius: 10px;
+    background-color: #E3E8EC;
+    color: black;
 }
 
 .section5 .container_input .input{
-    display: flex;
-    width: 50%;
-    height: 30px;
+    width: 400px;
+    height: 36px;
+    background-color: #E3E8EC;
+    border: solid black;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
 }
 
-.section5 .container .select{
-    
-    width: 50%;
+.section5 .container_input .option{
+    text-align: center;
+    width: 409px;
+    border: solid black;
+    background-color: transparent;
+    color: black;
+    height: 40px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.section5 .container_button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.section5 .container_button .button{
+    border: solid black 2px;
+    border-radius: 50px;
+    width: 400px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.div_resposta{
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start;
+    width: 450px;
+    color: black;
+    height: 250px;
+    animation: moveToLeft 1s ;
+}
+
+@keyframes moveToLeft {
+    from{
+        margin-right: -64.5%;
+    }
+
+    to{
+        margin-right: 0;
+    }
 }
 
 .section6{

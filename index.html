@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -21,13 +22,27 @@
                 <img src="./assets/LogoKohiPronto.png" />
             </div>
                 <ul class="navbar">
-                    <li>Home</li>
-                    <li>Sobre</li>
-                    <li>Feedbacks</li>
-                    <li>Simule</li>
-                    <li>Contato</li>
-                    <a href="cadastro.html">
+                    <a href="#">
+                        <li>Home</li>
+                    </a>
+                    <a href="#section3">
+                        <li>Feedbacks</li>
+                    </a>
+                    <a href="#section4">
+                        <li>Sobre</li>
+                    </a>
+                    <a href="#section5">
+                        <li>Simule</li>
+                    </a>
+                    <a href="#section6">
+                        <li>Contato</li>
+                    </a>
+                    <li> | </li>
+                    <a href="login.html">
                         <li>Login</li>
+                    </a>
+                    <a href="cadastro.html">
+                        <li class="cadastro">Cadastre-se</li>
                     </a>
                 </ul>
             </div>
@@ -51,7 +66,7 @@
 
 
 
-    <div class="section2">
+    <div class="section2" id="section2">
         <div class="graos"><img src="./assets/GRÃOS DE CAFÉ.png">
         </div>
         <div class="box-texto">
@@ -65,7 +80,7 @@
             <p>Aumento significativo em lucros.</p>
         </div>
     </div>
-    <div class="section3">
+    <div class="section3" id="section3">
         <h1>Veja alguns comentários de nossos clientes</h1>
         <div class="linha_section3"></div>
         <div class="boxes">
@@ -87,7 +102,7 @@
     </div>
 
 
-    <div class="section4">
+    <div class="section4" id="section4">
 
         <div class="imagem_silo"> <img src="./assets/Mask group.png"> </div>
 
@@ -107,11 +122,11 @@
         </div>
     </div>
 
-    <div class="section5">
+    <div class="section5" id="section5">
         <h1>Faça uma simulação conosco!</h1>
         <div class="linha_section5"></div>
         <div class="container">
-            <div id="div1" class="div1" style="display:none"></div>
+            <div id="div1" class="div_resposta" style="display:none"></div>
             <div class="container_input">
                 <h3>Sacas Produzidas por Ano:</h3> 
                 <input type="number" id="inProduzido" class="input">
@@ -119,7 +134,7 @@
                 <input type="number" id="inPerda" class="input">
                 <div class="select">
                     <h3>Tipo de café:</h3> 
-                    <select class="input" id="opcoes">
+                    <select class="option" id="opcoes">
                         <option value="-1"><span class="select_nl">SELECIONE</span></option>
                         <option value="1" id="optionArabica">ARÁBICA</option>
                         <option value="2" id="optionConilon">CONILON</option>
@@ -133,7 +148,7 @@
     </div>
 
     
-    <div class="section6">
+    <div class="section6" id="section6">
         <h1>Contato</h1>
         <div class="linha_contato"></div>
         <h3>Nome:</h3>
@@ -141,7 +156,7 @@
         <h3>E-mail:</h3>
         <input type="text" id="ipt_email" placeholder="E-mail" class="input">
         <h3 class="mensagem">Mensagem:</h3>
-        <input type="text" id="ipt_mensagem" placeholder="Mensagem (Máximo 500 caracteres)" class="input_msg">
+        <input type="text" id="ipt_mensagem" placeholder="Mensagem (Máximo 500 caracteres)" min="0" max="500" class="input_msg">
         <button onclick="">ENVIAR</button>
     </div>
 
@@ -153,8 +168,8 @@
                 <p>&copy;Todos os direitos reservados.</p>
             </div>
             <div class="box2">
-                <p>kohiquality@suporte.com</p>
-                <p>(11) 4002-8922</p>
+                <p>&#9993; kohiquality@suporte.com</p>
+                <p>&#9990; (11) 4002-8922</p>
             </div>
         </div>
     </div>
