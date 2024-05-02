@@ -1,5 +1,5 @@
-var ValorArabica = Number(1015 / 60).toFixed(2); // valor de 1 Kg de Arábica
-var ValorConilon = Number(864 / 60).toFixed(2); // valor de 1 Kg de Conilon
+var ValorArabica = Number(1015).toFixed(2); // valor de 1 saca de Arábica
+var ValorConilon = Number(864).toFixed(2); // valor de 1 saca de Conilon
 
 var Porcentagem = Number(0.2); // redução de perdas com nossos serviços
 
@@ -7,13 +7,12 @@ function calcular() {
     div1.style = `display: flex`;
     div1.innerHTML = ` `; // Apaga a simulação anterior
     var Produzidos = Number(inProduzido.value); // Sacas produzidas por ano
-    var KgProduzidos = Produzidos * 60; // Kg produzidos por ano
-    var Perdido = Number(inPerda.value); // Kg perdidos por ano
+    var Perdido = Number(inPerda.value); // Sacas perdidas por ano
     var option = Number(opcoes.value); // Tipo escolhido de café
-    var Total = KgProduzidos - Perdido; // Quantidade inicial de Kg de café sem nossos serviços
+    var Total = Produzidos - Perdido; // Quantidade inicial de sacas de café sem nossos serviços
 
     var TotalPerda = Perdido * Porcentagem; // Total de perdas com a redução dos nossos serviços
-    var QuantidadeFinal = KgProduzidos - TotalPerda; // Quantidade final de Kg de café com nossos serviços
+    var QuantidadeFinal = Produzidos - TotalPerda; // Quantidade final de Kg de café com nossos serviços
 
     if (option == 1) { // tipo de café = Arábico
         Total *= ValorArabica; // Aproveitamento sem nossos serviços
