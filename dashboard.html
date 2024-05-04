@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Dashboard - Kohi Quality</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <link rel="icon" href="./assets/LogoKohiPronto.png" type="image/x-icon">
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+    <link rel="stylesheet" href="style_dashboard.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo"><img src="./assets/LogoKohiPronto.png" alt="logotipo"></div>
+        <div class="container">
+            <div class="sair"><a href="./index.html">Sair</a></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <a href="armazem.html" class="armazem_alfa">
+            <span>Armazém Alfa <br><br> Temperatura: 20º <br> Umidade: 63.5%</span>
+        </a>
+        <a href="armazem.html" class="armazem_beta">
+            <span>Fique atento, a temperatura está subindo <br><br> Fique atento, a umidade está abaixando</span>
+            <span>Armazém Beta <br> Temperatura: 24º <br> Umidade: 63.1%</span>
+        </a>
+        <a href="armazem.html" class="armazem_gama">
+            <span>Armazém Gama <br><br> Temperatura: 20º <br> Umidade: 63.5%</span>
+        </a>
+        <a href="armazem.html" class="armazem_delta">
+            <span>Armazém Delta <br><br> Temperatura: 20º <br> Umidade: 63.5%</span>
+        </a>
+        <a href="armazem.html" class="armazem_kappa">
+            <span>TEMPERATURA ABAIXO DO RECOMENDADO <br><br> UMIDADE ACIMA DO RECOMENDADO</span>
+            <span>Armazém Kappa <br> Temperatura: 14.5º <br> Umidade: 64.2%</span>
+        </a>
+        <a href="armazem.html" class="armazem_omega">
+            <span>Armazém Ômega <br><br> Temperatura: 20º <br> Umidade: 63.5%</span>
+        </a>
+    </div>
+
+</body>
+
+</html>

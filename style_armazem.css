@@ -1,0 +1,234 @@
+* {
+    font-family: "Inter", sans-serif;
+}
+
+html,
+body {
+    background: #E3E8EC;
+    padding: 0;
+}
+
+.header {
+    width: 100vw;
+    height: 90px;
+    margin: 0;
+    display: flex;
+}
+
+.header .container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.header .logo {
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 10%;
+}
+
+.header .logo img {
+    width: 100px;
+    height: auto;
+}
+
+
+.sair {
+    background-color: #36561E;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    border-radius: 7px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 25px;
+}
+
+.sair a {
+    color: #E3E8EC;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.sair:hover {
+    -xpedu-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu {
+    height: 100%;
+    width: 180px;
+    margin: 0;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+#span_status {
+    font-weight: 600px;
+}
+
+.status_temperatura {
+    width: 300px;
+    height: 115px;
+    margin-top: 170px;
+    text-align: center;
+    background-color: rgba(183, 150, 107, 0.95);
+    color: #FFFFFF;
+    padding-top: 25px;
+    border-radius: 5px;
+}
+
+.status_umidade {
+    width: 300px;
+    height: 115px;
+    margin-top: 70px;
+    text-align: center;
+    background-color: rgba(183, 150, 107, 0.95);
+    color: #FFFFFF;
+    padding-top: 25px;
+    border-radius: 5px;
+}
+
+.status_temperatura span {
+    flex-direction: column;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.status_umidade span {
+    flex-direction: column;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.graficos_linha {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 110px;
+    margin-top: 10px;
+    color: black;
+}
+
+.umid {
+    width: 650px;
+    margin-left: 30px;
+    background-color: #ccdeec;
+    padding-left: 5px;
+    border-radius: 5px;
+}
+
+.temp {
+    width: 650px;
+    margin-left: 30px;
+    margin-top: 20px;
+    background-color: #ccdeec;
+    padding-left: 5PX;
+    border-radius: 5px;
+}
+
+
+h1 {
+    font-size: 25px;
+    color: #2E1402;
+}
+
+
+.especificacoes {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.especificacoes_umidade {
+    width: 340px;
+    height: 190px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccdeec;
+    padding-top: 10px;
+    border-radius: 5px;
+}
+
+.especificacoes_temperatura {
+    width: 340px;
+    height: 190px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccdeec;
+    padding-top: 5px;
+    border-radius: 5px;
+}
+
+.span_esp_temp {
+    flex-direction: column;
+    color: #2E1402;
+    font-size: 17px;
+    display: flex;
+    text-align: center;
+}
+
+.span_esp_umid {
+    flex-direction: column;
+    font-size: 17px;
+    color: #2E1402;
+    display: flex;
+    text-align: center;
+}
+
+.esp_texto {
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+}
+
+.especificacoes_temperatura span {
+    flex-direction: column;
+    font-size: 18px;
+    text-align: justify;
+    display: flex;
+}
+
+.especificacoes_umidade span {
+    flex-direction: column;
+    font-size: 18px;
+    text-align: justify;
+    display: flex;
+}
+
+.alerta_atencao {
+    color: #f19710;
+    font-weight: bold;
+}
+
+.alerta_vermelho {
+    color: #e03a24;
+    font-weight: bold;
+}
