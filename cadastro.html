@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/LogoKohiPronto.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_cadastro.css">
     <title>Kohi Quality-Cadastro</title>
 </head>
 
@@ -15,12 +15,11 @@
         <div class="logo"><img src="./assets/LogoKohiPronto.png" alt="logotipo"></div>
         <div class="container">
             <div class="navbar">
-                <a href="">Home</a>
+                <a href="./index.html">Home</a>
                 <a href="">Sobre</a>
                 <a href="">Feedbacks</a>
                 <a href="">Simule</a>
                 <a href="">Contato</a>
-                <a href="">Dashboard</a>
             </div>
         </div>
     </div>
@@ -75,8 +74,8 @@
                         </div>
 
                         <div class="input-box">
-                                <p>Número: *</p>
-                                <input type="text" id="input_numero" placeholder="N°">
+                            <p>Número: *</p>
+                            <input type="text" id="input_numero" placeholder="N°">
                         </div>
 
                         <div class="input-box">
@@ -128,9 +127,12 @@
                 <div class="continue-button">
                     <button onclick="cadastrar()">Cadastrar</button>
                 </div>
-                <div class="div_mensagem" id="div_mensagem">
 
+                <div class="login">
+                    <a href="./login.html">Login</a>
                 </div>
+
+                <div class="div_mensagem" id="div_mensagem"></div>
 
             </div>
         </div>
@@ -158,37 +160,37 @@
         var confirmarSenha = input_ConfirmarSenha.value;
 
         if (nome_completo == "" || cpf == "" || logradouro == "" || numero == "" || complemento == "" || bairro == "" || estado == "" || numTelefone == "" || email == "" || senha == "" || confirmarSenha == "") {
-        div_mensagem.innerHTML += `Por favor, preencha todos os campos obrigatórios (*) para se cadastrar como cliente<br>`;
-    } else if (senha !== confirmarSenha) {
-        div_mensagem.innerHTML += `Senhas diferentes<br>`;
-    } else if (senha.length < 8) {
-        div_mensagem.innerHTML += `A senha deve ter pelo menos 8 caracteres<br>`;
-    } else {
-        
-        var caracteresEspeciais = "!@#$%^&*()-+";
-        var temCaracterEspecial = false;
+            div_mensagem.innerHTML += `Por favor, preencha todos os campos obrigatórios (*) para se cadastrar como cliente<br>`;
+        } else if (senha !== confirmarSenha) {
+            div_mensagem.innerHTML += `Senhas diferentes<br>`;
+        } else if (senha.length < 8) {
+            div_mensagem.innerHTML += `A senha deve ter pelo menos 8 caracteres<br>`;
+        } else {
 
-        for (var i = 0; i < senha.length; i++) {
-            if (caracteresEspeciais.indexOf(senha[i]) !== -1) {
-                temCaracterEspecial = true;
-                break;
+            var caracteresEspeciais = "!@#$%^&*()-+";
+            var temCaracterEspecial = false;
+
+            for (var i = 0; i < senha.length; i++) {
+                if (caracteresEspeciais.indexOf(senha[i]) !== -1) {
+                    temCaracterEspecial = true;
+                    break;
+                }
+            }
+
+            if (!temCaracterEspecial) {
+                div_mensagem.innerHTML += `A senha deve conter pelo menos um caractere especial<br>`;
+            } else {
+                var indice_arroba = email.indexOf("@");
+
+                if (indice_arroba < 0) {
+                    div_mensagem.innerHTML += `Email inválido<br>`;
+                } else {
+                    window.location.href = "login.html";
+                }
             }
         }
-
-        if (!temCaracterEspecial) {
-            div_mensagem.innerHTML += `A senha deve conter pelo menos um caractere especial<br>`;
-        } else {
-            var indice_arroba = email.indexOf("@");
-
-            if (indice_arroba < 0) {
-                div_mensagem.innerHTML += `Email inválido<br>`;
-            } else {
-                window.location.href = "login.html";
-            }
-            }
-            }
     }
 
-   
+
 
 </script>

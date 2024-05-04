@@ -68,17 +68,18 @@ body {
     background-image: url("./assets/jo-lanta-68KjM0kfsVo-unsplash.jpg");
 }
 .form{
-    width: 55%;
+    width: 50%;
     height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #B7966B;
+    background-color: rgba(183, 150, 107, 0.8);
     padding: 3rem;
     border-radius: 5px;
     margin-bottom: 50px;
 }
+
 .form-header{
     margin-bottom: 1rem;
     display: flex;
@@ -96,12 +97,12 @@ body {
 }
 
 .input-group{
-    width: 95%;
-    height: 200px;
+    width: 500px;
+    height: 250px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 2rem;
+    padding: 10px;
 }
 
 .input-box{
@@ -117,7 +118,7 @@ body {
     box-shadow: 1px 1px 6px #0000001c;
 }
 .input-box p{
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #000000c0;
 }
@@ -138,18 +139,37 @@ body {
     padding: 0.62rem;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 350px;
+    font-size: 15px;
+    color: #fff;
+    margin-top: 280px;
 }
 
 .continue-button button:hover{
     background-color: #36561E;
+    -xpedu-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .continue-button button a{
     text-decoration: none;
     font-size: 15px;
     font-weight: 500;
-    color: #fff;
+}
+
+.form .login a{
+    color: #2E1402;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form .login a:hover{
+    color: #36561E;
+    -xpedu-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 

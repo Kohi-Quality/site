@@ -5,7 +5,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 body {
@@ -57,7 +57,7 @@ body {
 
 .navbar a:hover {
     color: #36561E;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .banner .container {
@@ -129,9 +129,11 @@ body {
     color: #000000c0;
 }
 
-
-.continue-button button:hover {
+.form .continue-button button:hover {
     background-color: #36561E;
+    -xpedu-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .continue-button button a {
@@ -139,4 +141,19 @@ body {
     font-size: 15px;
     font-weight: 500;
     color: #fff;
+}
+
+.input-group .cadastrar a{
+    color: #2E1402;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.input-group .cadastrar a:hover{
+    color: #36561E;
+    -xpedu-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
 }
