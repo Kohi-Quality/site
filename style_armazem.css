@@ -5,14 +5,21 @@
 html,
 body {
     background: #E3E8EC;
+    margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image: url(./assets/jo-lanta-68KjM0kfsVo-unsplash.jpg);
+    background-repeat: no-repeat;
 }
 
 .header {
     width: 100vw;
-    height: 90px;
+    height: 100px;
     margin: 0;
     display: flex;
+    background: #E3E8EC;
 }
 
 .header .container {
@@ -32,7 +39,7 @@ body {
 
 .header .logo img {
     width: 100px;
-    height: auto;
+    height: 100px;
 }
 
 
