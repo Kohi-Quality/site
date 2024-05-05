@@ -83,32 +83,37 @@
     var email = input_email.value;
     var senha = input_senha.value;
 
-    if (email != "" && senha != "") {
+    if (email != '' && senha != '') {
 
-      for (var cont = tentativas; cont > 0; cont--) {
-        if (email == "cliente@email.com" && senha == "cliente123") {
-          window.location.href = "./dashboard.html";
+      for (var contador = tentativas; contador > 0; contador--) {
+        if (email == 'cliente@email.com' && senha == 'cliente123!') {
+          window.location.href = 'dashboard.html';
 
-          input_email = "";
-          input_senha = "";
+          input_email = '';
+          input_senha = '';
 
           tentativas = 3;
+
+          break;
+
         } else {
           tentativas--;
 
-          cont = tentativas;
+          contador = tentativas;
 
-          alert(`Login incorreto. Restam ${cont} tentativas.`);
+          alert(`Login incorreto. Restam ${contador} tentativas.`);
+
+          break
         }
       }
 
       if (tentativas == 0) {
         alert("Você não tem mais tentativas.");
-        window.location.href = "cadastro.html";
+        window.location.href = 'cadastro.html';
       }
 
     } else {
-      alert("Preencha os campos.");
+      alert("Preencha os campos!");
     }
 
   }
