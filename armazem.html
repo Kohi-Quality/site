@@ -69,8 +69,8 @@
                 <div class="esp_texto">
                     <span class="span_esp_temp"><b>Especificacoes de valores de Temperatura</b></span>
                     <span class="span_esp_umid">Temperatura Ideal: entre 10ºC e 23ºC</span>
-                    <span class="alerta_atencao">Alerta de atenção para temperatura alta: 22ºC</span>
-                    <span class="alerta_atencao">Alerta de atenção para temperatura baixa: 15ºC</span>
+                    <span class="alerta_atencao">Alerta de atenção para temperatura alta: 21ºC</span>
+                    <span class="alerta_atencao">Alerta de atenção para temperatura baixa: 12ºC</span>
                     <span class="alerta_vermelho">Alerta vermelho: acima de 24ºC e abaixo de 10ºC</span>
                 </div>
             </div>
@@ -88,10 +88,10 @@
     if (temp_atual < 10) {
         span_temperatura.innerHTML = "<b>TEMPERATURA ABAIXO DO RECOMENDADO</b>"
         status_temperatura.style = `background-color: #CA4224;`;
-    } else if (temp_atual <= 15) {
+    } else if (temp_atual <= 12) {
         span_temperatura.innerHTML = "Fique atento, a temperatura está abaixando"
         status_temperatura.style = `background-color: #E9500F`;
-    } else if (temp_atual <= 22) {
+    } else if (temp_atual <= 21) {
         span_temperatura.innerHTML = "Fique atento, a temperatura está subindo"
         status_temperatura.style = `background-color: #E9500F`;
     } else if (temp_atual > 23) {

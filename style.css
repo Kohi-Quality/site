@@ -256,9 +256,10 @@ body {
 }
 
 .section4 .box-section4 p{
-    margin: 40px;
+    margin: 30px;
     font-size: 25px;
     margin-right: 20px;
+    text-align: justify;
 }
 
 .section5{
