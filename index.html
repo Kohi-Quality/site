@@ -73,10 +73,10 @@
             <ul>
                 <li>Instalação dos sensores em seus silos; </li> 
                 <li>Monitoramento 24H de temperatura e umidade; </li> 
-                <li>Dados coletados fornecidos em gráfico; </li> 
-                <li>Regulação de acordo com a espécie de café; </li> 
-                <li>Aumento da qualidade dos seus grãos; </li> 
-                <li>Aumento significativo em lucros. </li> 
+                <li>Dados coletados pelo; </li> 
+                <li>Alertas são emitidos de acordo com a situação do silo; </li> 
+                <li>; </li> 
+                <li>Aumento na confiabilidade do produto do cliente. </li> 
             </ul>
         </div>
     </div>
@@ -85,24 +85,32 @@
         <div class="linha_section3"></div>
         <div class="boxes">
             <div class="box">
-                    <img src="./assets/LogoMelitta_sombra_png@2xHeader.png">
+                <div class="box-interno">
+                    <img src="./assets/melitta.png">
                     <h4>Café Melitta</h4>
-                    <p> "O sistema de monitoramento de temperatura e umidade dos silos fornecido pela Kohi Quality tem sido uma adição excepcional ao nosso processo de armazenamento de café. Sua precisão e confiabilidade garantem que nossos produtos sejam mantidos nas condições ideais. A capacidade de detectar variações rapidamente nos permite agir proativamente para evitar problemas de deterioração."</p>
+                    <p> "O sistema de monitoramento de temperatura e umidade dos silos fornecido pela Kohi Quality tem sido uma adição excepcional ao nosso processo de armazenamento de café. Sua precisão e confiabilidade garantem que nossos produtos sejam mantidos nas condições ideais. A capacidade de detectar variações nos permite agir buscando evitar problemas de deterioração."</p>
+                </div>
             </div>
             <div class="box">
-                <img src="./assets/3-coracoes.png">
-                <h4>Café 3 Corações</h4>
-                <p>"Agradecemos à Kohi Quality pela parceria sólida e pelo sistema de monitoramento de temperatura e umidade dos silos, essencial para garantir a integridade do nosso café durante o armazenamento. Sua tecnologia confiável e precisão nos permitem manter os mais altos padrões de qualidade em nossos produtos."</p>
+                <div class="box-interno">
+                    <img src="./assets/3-coracoes.png">
+                    <h4>Café 3 Corações</h4>
+                    <p>"Agradecemos à Kohi Quality pela parceria sólida e pelo sistema de monitoramento de temperatura e umidade dos silos, essencial para garantir a integridade do nosso café durante o armazenamento. Sua tecnologia confiável e precisão nos permitem manter os mais altos padrões de qualidade em nossos produtos."</p>
+                </div>
             </div>
             <div class="box">
-                <img src="">
-                <h4>Café Pilão</h4>
-                <p>"A Kohi Quality tem sido uma parceria excepcional para o Café Pilão. Seu compromisso com o controle de qualidade no armazenamento de café garante a integridade dos nossos produtos. Sua expertise e tecnologia nos permitem manter os mais altos padrões, proporcionando confiança aos nossos clientes."</p>
+                <div class="box-interno">
+                    <img src="./assets/pilao-logo.png">
+                    <h4>Café Pilão</h4>
+                    <p>"A Kohi Quality tem sido uma parceria excepcional para o Café Pilão. Seu compromisso com o controle de qualidade no armazenamento de café garante a integridade dos nossos produtos. Sua expertise e tecnologia nos permitem manter os mais altos padrões, proporcionando confiança aos nossos clientes."</p>
+                </div>
             </div>
             <div class="box">
-                <img src="">
-                <h4>Nescafé</h4>
-                <p>"A Kohi Quality tem sido uma valiosa aliada para a Nescafé. Sua abordagem meticulosa e tecnologia avançada nos permitem manter os mais altos padrões, assegurando a satisfação dos nossos consumidores. Estamos extremamente satisfeitos com nossa parceria e ansiosos para continuar trabalhando juntos no futuro."</p>
+                <div class="box-interno">
+                    <img src="./assets/Nescafe-Logo.png">
+                    <h4>Nescafé</h4>
+                    <p>"A Kohi Quality tem sido uma valiosa aliada para a Nescafé. Sua abordagem meticulosa e tecnologia avançada nos permitem manter os mais altos padrões, assegurando a satisfação dos nossos consumidores. Estamos extremamente satisfeitos com nossa parceria e ansiosos para continuar trabalhando juntos no futuro."</p>
+                </div>
             </div>
 
         </div>
@@ -124,7 +132,7 @@
                 você seja um produto de alta qualidade.</p>
             <p> Surgimos a partir do consenso de que a qualidade do café no nosso país é muito reduzido por conta das
                 falhas
-                no processo de armazenamento dos grãos de café pós secagem nos silos, que faz com que o grão perca
+                no processo de armazenamento dos grãos de café pós secagem nos silos, que faz com que o grão tenha alteração na 
                 umidade e
                 seus óleos naturais, gerando grandes perda nas sacras produzidas.</p>
         </div>
@@ -143,7 +151,7 @@
                 <div class="select">
                     <h3>Tipo de café:</h3> 
                     <select class="option" id="opcoes">
-                        <option value="-1"><span class="select_nl">SELECIONE</span></option>
+                        <option value="#">SELECIONE</option>
                         <option value="1" id="optionArabica">ARÁBICA</option>
                         <option value="2" id="optionConilon">CONILON</option>
                     </select>
@@ -160,11 +168,11 @@
         <h1>Contato</h1>
         <div class="linha_contato"></div>
         <h3>Nome:</h3>
-        <input type="text" id="ipt_nome" placeholder="Nome" class="input">
+        <input type="text" id="ipt_nome" placeholder="" class="input">
         <h3>E-mail:</h3>
-        <input type="text" id="ipt_email" placeholder="E-mail" class="input">
+        <input type="text" id="ipt_email" placeholder="" class="input">
         <h3 class="mensagem">Mensagem:</h3>
-        <input type="text" id="ipt_mensagem" placeholder="Mensagem (Máximo 500 caracteres)" min="0" max="500" class="input_msg">
+        <input type="text" id="ipt_mensagem" placeholder="  (Máximo 500 caracteres)" min="0" max="500" class="input_msg">
         <button onclick="">ENVIAR</button>
     </div>
 
