@@ -159,9 +159,9 @@
         var senha = input_senha.value;
         var confirmarSenha = input_ConfirmarSenha.value;
 
-        if (nome_completo == "" || cpf == "" || logradouro == "" || numero == "" || complemento == "" || bairro == "" || estado == "" || numTelefone == "" || email == "" || senha == "" || confirmarSenha == "") {
+        if (nome_completo == "" || cpf == "" || logradouro == "" || numero == "" || bairro == "" || estado == "" || numTelefone == "" || email == "" || senha == "" || confirmarSenha == "") {
             div_mensagem.innerHTML += `Por favor, preencha todos os campos obrigatórios (*) para se cadastrar como cliente<br>`;
-        } else if (senha !== confirmarSenha) {
+        } else if (senha != confirmarSenha) {
             div_mensagem.innerHTML += `Senhas diferentes<br>`;
         } else if (senha.length < 8) {
             div_mensagem.innerHTML += `A senha deve ter pelo menos 8 caracteres<br>`;
