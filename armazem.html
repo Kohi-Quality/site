@@ -59,10 +59,10 @@
             <div class="especificacoes_umidade">
                 <div class="esp_texto">
                     <span class="span_esp_umid"> <b>Especificações de valores de Umidade</b> </span>
-                    <span class="span_esp_umid">Umidade Ideal: 65% </span>
-                    <span class="alerta_atencao">Alerta de atenção para umidade alta: 65.9 </span>
-                    <span class="alerta_atencao">Alerta de atenção para umidade baixa: 65.1</span>
-                    <span class="alerta_vermelho">Alerta vermelho: acima de 66% e abaixo de 65%</span>
+                    <span class="span_esp_umid">Umidade Ideal: entre 50% e 60% </span>
+                    <span class="alerta_atencao">Alerta de atenção para umidade alta: 59% </span>
+                    <span class="alerta_atencao">Alerta de atenção para umidade baixa: 51%</span>
+                    <span class="alerta_vermelho">Alerta vermelho: acima de 60% e abaixo de 50%</span>
                 </div>
             </div>
             <div class="especificacoes_temperatura">
@@ -83,7 +83,7 @@
 
 <script>
     var temp_atual = 25;
-    var umid_atual = 65.9;
+    var umid_atual = 59;
 
     if (temp_atual < 10) {
         span_temperatura.innerHTML = "<b>TEMPERATURA ABAIXO DO RECOMENDADO</b>"
@@ -99,16 +99,16 @@
         status_temperatura.style = `background-color: #D72418`;
     }
 
-    if (umid_atual < 65) {
+    if (umid_atual < 50) {
         span_umidade.innerHTML = "<b>UMIDADE ABAIXO DO RECOMENDADO</b>"
         status_umidade.style = `background-color: #D72418`;
-    } else if (umid_atual <= 65.1 && umid_atual >= 65.01) {
+    } else if (umid_atual <= 51 && umid_atual >= 52) {
         span_umidade.innerHTML = "Fique atento, a umidade está abaixando"
         status_umidade.style = `background-color: #FD8211`;
-    } else if (umid_atual >= 65.9 && umid_atual <= 65.99) {
+    } else if (umid_atual >= 59 && umid_atual <= 60) {
         span_umidade.innerHTML = "Fique atento, a umidade está subindo"
         status_umidade.style = `background-color: #FD8211`;
-    } else if (umid_atual > 65) {
+    } else if (umid_atual > 60) {
         span_umidade.innerHTML = "<b>UMIDADE ACIMA DO RECOMENDADO</b>"
         status_umidade.style = `background-color: #D72418`;
     }
