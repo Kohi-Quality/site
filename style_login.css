@@ -81,6 +81,10 @@ body {
         border-radius: 15px;
         margin-bottom: 50px;
 
+        .continue-button {
+            border-radius: 5px;
+        }
+
         .continue-button button {
             width: 300px;
             border: none;
@@ -89,6 +93,11 @@ body {
             border-radius: 5px;
             cursor: pointer;
             margin-top: 30px;
+            transition: 0.5s;
+        }
+
+        .continue-button button:hover {
+        background-color: #36561E;
         }
     }
 }
@@ -127,13 +136,6 @@ body {
     font-size: 1.2rem;
     font-weight: 600;
     color: #000000c0;
-}
-
-.form .continue-button button:hover {
-    background-color: #36561E;
-    -xpedu-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
 }
 
 .continue-button button a {
