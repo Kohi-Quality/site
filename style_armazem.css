@@ -67,6 +67,40 @@ body {
     transform: scale(1.1);
 }
 
+.nome_armazem {
+    text-align: center;
+
+    h1{
+        font-size: 37px;
+    }
+}
+
+.armazem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .temperatura {
+        background-color: rgb(204, 222, 236, 0.8);
+        color: #2E1402;
+        width: 400px;
+        border-radius: 5px;
+        margin-right: 50px;
+        text-align: center;
+    }
+
+    .umidade {
+        background-color: rgb(204, 222, 236, 0.8);
+        color: #2E1402;
+        width: 400px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+}
+
 .container {
     display: flex;
     flex-direction: row;
@@ -133,6 +167,7 @@ body {
     justify-content: space-between;
     margin-left: 110px;
     margin-top: 10px;
+    margin-bottom: 50px;
     color: black;
 }
 
@@ -163,10 +198,24 @@ h1 {
 .especificacoes {
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .especificacoes_umidade {
+    width: 340px;
+    height: 190px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(204, 222, 236, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.especificacoes_temperatura {
     width: 340px;
     height: 190px;
     margin-top: 40px;
@@ -175,22 +224,8 @@ h1 {
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-color: #ccdeec;
-    padding-top: 10px;
-    border-radius: 5px;
-}
-
-.especificacoes_temperatura {
-    width: 340px;
-    height: 190px;
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    background-color: #ccdeec;
-    padding-top: 5px;
+    background-color: rgb(204, 222, 236, 0.8);
+    padding: 20px;
     border-radius: 5px;
 }
 
