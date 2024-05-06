@@ -29,7 +29,7 @@ function calcular() {
     Seus lucros vão para R$${QuantidadeFinal.toFixed(2).replace(".", ",")} ao utilizar nossos serviços na Kohi Quality
     <br><br><br>
     <span class="H2">Como Funciona?</span>
-    Com nossos serviços de controle de qualidade no processo de armazenamento, há uma diminuição percentual de 20% da quantidade de quilos perdidos, totalizando um aumento de 25-30% de lucro para sua empresa.
+    Com nossos serviços de controle de qualidade no processo de armazenamento, há uma diminuição percentual de até 20% da quantidade de sacas perdidas, totalizando um aumento de 20% de lucro para sua empresa.
     <br><br><br>
     <span class="H2">Informações de Mercado</span>
     Peso padrão por saca: 60Kg
