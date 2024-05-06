@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./assets/LogoKohiPronto.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style_login.css" />
+  <title>Kohi Quality-Login</title>
+</head>
+
+<body>
+
+  <div class="header">
+
+    <div class="logo">
+      <img src="./assets/LogoKohiPronto.png" alt="logotipo" />
+    </div>
+
+    <div class="container">
+
+      <div class="navbar">
+        <a href="./index.html">Home</a>
+        <a href="">Sobre</a>
+        <a href="">Feedbacks</a>
+        <a href="">Simule</a>
+        <a href="">Contato</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="banner">
+
+    <div class="container">
+
+      <div class="form">
+
+        <div class="form-header">
+          <div class="title">
+            <h1>Login</h1>
+          </div>
+        </div>
+
+        <div class="input-group">
+
+          <div class="input-box">
+            <label for="email">Email :</label>
+            <input type="email" id="input_email" placeholder="Digite seu email" />
+          </div>
+
+          <div class="input-box">
+            <label for="senha">Senha: </label>
+            <input type="password" id="input_senha" placeholder="******" />
+          </div>
+
+          <div class="continue-button">
+            <button onclick="entrar()"><a href="#">Entrar</a></button>
+          </div>
+
+          <div class="cadastrar">
+            <a href="./cadastro.html">Cadastre-se</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
+
+<script>
+
+  var tentativas = 3;
+
+  function entrar() {
+    var email = input_email.value;
+    var senha = input_senha.value;
+
+    if (email != '' && senha != '') {
+
+      for (var contador = tentativas; contador > 0; contador--) {
+        if (email == 'cliente@email.com' && senha == 'cliente123!') {
+          window.location.href = 'dashboard.html';
+
+          input_email = '';
+          input_senha = '';
+
+          tentativas = 3;
+
+          break;
+
+        } else {
+          tentativas--;
+
+          contador = tentativas;
+
+          alert(`Login incorreto. Restam ${contador} tentativas.`);
+
+          break
+        }
+      }
+
+      if (tentativas == 0) {
+        alert("Você não tem mais tentativas.");
+        window.location.href = 'cadastro.html';
+      }
+
+    } else {
+      alert("Preencha os campos!");
+    }
+
+  }
+
+</script>

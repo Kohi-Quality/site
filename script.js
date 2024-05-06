@@ -17,7 +17,7 @@ function calcular() {
 
 
     if(option == "#") {
-        div1.innerHTML = `<div style="color: red;"><b>SELECIONE UMA OPÇÂO DE TIPO DE CAFÉ VÁLIDA PARA A SIMULAÇÂO!</b></div>`
+        div1.innerHTML = `<div style="color: red;"><b>SELECIONE UM TIPO DE CAFÉ VÁLIDO PARA A SIMULAÇÂO!</b></div>`
     } else{
         if (option == "1") { // tipo de café = Arábico
             var tipo = "Arábica";
