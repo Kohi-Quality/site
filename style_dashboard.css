@@ -10,6 +10,7 @@ body {
     flex-direction: row;
     width: 100%;
     background-color: white;
+    scroll-behavior: smooth;
 }
 
 .aside{
@@ -20,6 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #E3E8EC;
+    box-shadow:  0 0 10px black;
 }
 
 .container{
@@ -43,6 +45,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.mensagem{
+    font-size: 16px;
 }
 
 .menu{
@@ -110,10 +116,10 @@ body {
     align-items: center;
     justify-content: center;
     width: 250px;
-    height: 100px;
+    height: 75px;
     background-color: #E3E8EC;
-    border: black solid 5px;
-    border-radius: 10px;
+    border: black solid 10px;
+    border-radius: 50px;
 }
 
 .kpi-estavel{
@@ -121,10 +127,10 @@ body {
     align-items: center;
     justify-content: center;
     width: 250px;
-    height: 100px;
+    height: 75px;
     background-color: #E3E8EC;
-    border: #556946 solid 5px;
-    border-radius: 10px;
+    border: #556946 solid 10px;
+    border-radius: 50px;
 }
 
 .kpi-atencao{
@@ -132,10 +138,10 @@ body {
     align-items: center;
     justify-content: center;
     width: 250px;
-    height: 100px;
+    height: 75px;
     background-color: #E3E8EC;
-    border: #2E1402 solid 5px;
-    border-radius: 10px;
+    border: #724A24 solid 10px;
+    border-radius: 50px;
 }
 
 .kpi-alerta{
@@ -143,22 +149,16 @@ body {
     align-items: center;
     justify-content: center;
     width: 250px;
-    height: 100px;
+    height: 75px;
     background-color: #E3E8EC;
-    border: solid 5px;
+    border: solid 10px;
     animation: BorderAlerta 0.5s infinite;
-    border-radius: 10px;
+    border-radius: 50px;
 }
 
-.box-kpis{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 250px;
-    height: 100px;
-    background-color: #E3E8EC;
-    border: black solid 3px;
-    border-radius: 10px;
+h3{
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .container1{
@@ -187,8 +187,8 @@ body {
     background-color: #E3E8EC;
     opacity: 90%;
     color: black;
-    border-radius: 10px;
-    border: #556946 solid 5px;
+    border-radius: 20px;
+    border: #556946 solid 15px;
     font-weight: bold;
 }
 
@@ -202,8 +202,8 @@ body {
     background-color: #E3E8EC;
     opacity: 90%;
     color: black;
-    border-radius: 10px;
-    border: solid 5px;
+    border-radius: 20px;
+    border: solid 15px;
     font-weight: bold;
     animation: BorderAlerta 0.5s infinite;
 }
@@ -218,18 +218,23 @@ body {
     background-color: #E3E8EC;
     opacity: 90%;
     color: black;
-    border-radius: 10px;
-    border: #2E1402 solid 5px;
+    border-radius: 20px;
+    border: #724A24 solid 15px;
     font-weight: bold;
+}
+
+h4{
+    font-size: 18px;
 }
 
 .box-notificacao-estavel{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
     width: 200px;
     height: 50px;
-    border: solid #556946 4px;
+    border: solid #556946 10px;
     border-radius: 20px;
 }
 
@@ -237,9 +242,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
     width: 200px;
     height: 50px;
-    border: solid 4px;
+    border: solid 10px;
     border-radius: 20px;
     animation: BorderAlerta 0.5s infinite;
 }
@@ -248,10 +254,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
     width: 200px;
     height: 50px;
-    border: solid #2E1402 4px;
+    border: solid #724A24 10px;
     border-radius: 20px;
+}
+
+p{
+    font-size: 17px;
 }
 
 @keyframes BorderAlerta {
@@ -281,5 +292,5 @@ a{
 a:hover{
     -xpedu-transform: scale(1.1);
         -ms-transform: scale(1.1);
-        transform: scale(1.1);
+        transform: scale(1.05);
 }

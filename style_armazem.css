@@ -4,70 +4,107 @@
 
 html,
 body {
-    background: #E3E8EC;
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: white;
+}
+
+.aside{
+    display: flex;
     flex-direction: column;
-    width: 100%;
-    background-image: url(./assets/jo-lanta-68KjM0kfsVo-unsplash.jpg);
-    background-repeat: no-repeat;
-}
-
-.header {
-    width: 100vw;
-    height: 100px;
-    margin: 0;
-    display: flex;
-    background: #E3E8EC;
-}
-
-.header .container {
-    width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-
-.header .logo {
-    top: 0px;
-    left: 0px;
-    display: block;
-    width: 10%;
-}
-
-.header .logo img {
-    width: 100px;
-    height: 100px;
-}
-
-
-.sair {
-    background-color: #36561E;
-    width: 120px;
-    height: 40px;
-    display: flex;
-    border-radius: 7px;
+    height: 100%;
+    width: 300px;
     justify-content: center;
     align-items: center;
-    margin-right: 25px;
+    background-color: #E3E8EC;
+    box-shadow:  0 0 10px black;
 }
 
-.sair a {
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 300px;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mensagem{
+    font-size: 16px;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px;
+    width: 300px;
+}
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 200px;
+}
+
+.nav a{
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-menu{
+    display: flex;
+    width: 250px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: #E3E8EC;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 25px;
+    color: #556946;
+    margin-top: 40px;
+    
+}
+
+.item-menu:hover{
     color: #E3E8EC;
-    font-size: 17px;
-    font-weight: 600;
-    text-decoration: none;
+    background-color: #556946;
 }
 
-.sair:hover {
-    -xpedu-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
+
+.dash{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%px;
+    padding: 30px;
 }
 
 .nome_armazem {
+    display: flex;
+    justify-content: center;
     text-align: center;
 
     h1{
@@ -101,7 +138,7 @@ body {
 
 }
 
-.container {
+.container1 {
     display: flex;
     flex-direction: row;
 }
@@ -273,4 +310,10 @@ h1 {
 .alerta_vermelho {
     color: #e03a24;
     font-weight: bold;
+}
+
+a:hover{
+    -xpedu-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.05);
 }

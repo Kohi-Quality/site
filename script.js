@@ -29,21 +29,24 @@ function calcular() {
             QuantidadeFinal *= ValorConilon; // Novo aproveitamento
         }
         div1.innerHTML =
-        `<span class="H2">Simulando:</span>
-        Ao não utilizar nossos processos de controle, você tem lucro final de café tipo ${tipo} de <b style="color: red;">R$ ${Total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</b>
+        `<span>
+        <h2 class="H2">Simulando:</h2>
+        Ao não utilizar nossos processos de controle, você tem lucro final de café tipo ${tipo} de <span style="color: red;"> ${Total.toLocaleString('pt-br' ,{ style: 'currency', currency: 'BRL' })}</span>.
+        <br><br>    
+        Seus lucros vão para <span style="color: green;">${QuantidadeFinal.toLocaleString('pt-br' ,{ style: 'currency', currency: 'BRL' })}</span> ao utilizar nossos serviços na Kohi Quality.
         <br><br>
-        Seus lucros vão para <span style="color: green;">R$ ${QuantidadeFinal.toLocaleString({ style: 'currency', currency: 'BRL' })}</span> ao utilizar nossos serviços na Kohi Quality
-        <br><br><br>
         <span class="H2">Como Funciona?</span>
-        Com nossos serviços de controle de qualidade no processo de armazenamento, há uma diminuição percentual de 20% da quantidade de quilos perdidos, totalizando um aumento de até <span style="color: green;">20%</span> de lucro para sua empresa.
+        <br><br>
+        Com nossos serviços de controle de qualidade no processo de armazenamento, há uma diminuição percentual de <span style="color: green;">20%</span> da quantidade de quilos perdidos, totalizando um aumento de até <span style="color: green;">20%</span> de lucro para sua empresa.
         <br><br><br>
-        <span class="H2">Informações de Mercado</span>
+        <span class="H2">Informações de Mercado:</span>
+        <br><br>
         Peso padrão por saca: 60Kg
         <br><br>
         Preço da saca Árabica: R$1.015,00
         <br><br>
         Preço da saca Conilon: R$864,00
         <br><br>
-        <span class="update">Valores atualizados em 20/03/2024</span>`;
+        <p class="update">Valores atualizados em 20/03/2024</p></span>`;
     }
 }

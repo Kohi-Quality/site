@@ -6,55 +6,107 @@ html, body{
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: white;
+}
+
+
+.aside{
+    display: flex;
     flex-direction: column;
-    width: 100%;
-    background-image: url(./assets/jo-lanta-68KjM0kfsVo-unsplash.jpg);
-    background-repeat: no-repeat;
-    scroll-behavior: smooth;
-}
-
-
-.header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 120px;
-    width: 100%;
-    background-color: #E3E8EC;
-}
-
-.logo{
-    display: flex;
-    width: 10%;
     height: 100%;
-}
-
-.navbar{
-    display: flex;
-    flex-direction: row;
+    width: 300px;
+    justify-content: center;
     align-items: center;
-    width: 45%;
-}
-
-.menu{
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.banner{
-    display: flex;
-    height: 500px;
-    width: 94.6%;
-    padding: 40px;
+    background-color: #E3E8EC;
+    box-shadow:  0 0 10px black;
 }
 
 .container{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 300px;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mensagem{
+    display: flex;
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px;
+    width: 300px;
+    margin-right: 40px;
+}
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 200px;
+}
+
+.nav a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-menu{
+    display: flex;
+    width: 250px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: #E3E8EC;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 25px;
+    color: #556946;
+    margin-top: 40px;
+    
+}
+
+.item-menu:hover{
+    color: #E3E8EC;
+    background-color: #556946;
+}
+
+.banner{
+    display: flex;
+    height: 650px;
+    width: 100%;
+    padding: 40px;
+}
+
+.container1{
+    display: flex;
+    flex-direction: column;
     row-gap: 20px;    
-    height: 450px;
+    height: 600px;
     width: 100%;
     background-color: #E3E8EC;
     opacity: 90%;
@@ -73,7 +125,7 @@ html, body{
 }
 
 h3{
-    font-size: 25px;
+    font-size: 30px;
 }
 
 
@@ -89,12 +141,14 @@ h3{
     display: flex;
     flex-direction: row;
     height: 90px;
-    border: 5px solid; 
+    border: 10px solid; 
     border-radius: 15px;
     animation: BorderAlerta 0.5s infinite;
+    padding: 20px;
 }
 
 h4{
+    font-size: 20px;
     margin-left: 30px;
 }
 
@@ -102,9 +156,15 @@ h4{
     display: flex;
     flex-direction: row;
     height: 90px;
-    border: 5px solid #724A24; 
+    border: 10px solid #724A24; 
     border-radius: 15px;
+    padding: 20px;
+}
 
+.img{
+    display: flex;
+    height: 90px;
+    width: 100px;
 }
 
 @keyframes BorderAlerta {
@@ -123,4 +183,10 @@ h4{
     100% {
         border-color: #ff5733; 
     }
+}
+
+a{  
+    width: 250px;
+    height: 100px;
+    text-decoration: none;   
 }
