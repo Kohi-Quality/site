@@ -14,8 +14,7 @@ function calcular() {
 
     var TotalPerda = Perdido * Porcentagem; // Total de perdas com a redução dos nossos serviços
     var QuantidadeFinal = KgProduzidos - TotalPerda; // Quantidade final de Kg de café com nossos serviços
-
-
+        
     if(option == "#") {
         div1.innerHTML = `<div style="color: red;"><b>SELECIONE UM TIPO DE CAFÉ VÁLIDO PARA A SIMULAÇÂO!</b></div>`
     } else{
@@ -31,12 +30,12 @@ function calcular() {
         }
         div1.innerHTML =
         `<span class="H2">Simulando:</span>
-        Ao não utilizar nossos processos de controle, você tem lucro final de café tipo ${tipo} de <b style="color: red;">R$${Total.toFixed(2).replace(".", ",")}</b>
+        Ao não utilizar nossos processos de controle, você tem lucro final de café tipo ${tipo} de <b style="color: red;">R$ ${Total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</b>
         <br><br>
-        Seus lucros vão para <b style="color: green;">R$${QuantidadeFinal.toFixed(2).replace(".", ",")}</b> ao utilizar nossos serviços na Kohi Quality
+        Seus lucros vão para <span style="color: green;">R$ ${QuantidadeFinal.toLocaleString({ style: 'currency', currency: 'BRL' })}</span> ao utilizar nossos serviços na Kohi Quality
         <br><br><br>
         <span class="H2">Como Funciona?</span>
-        Com nossos serviços de controle de qualidade no processo de armazenamento, há uma diminuição percentual de 20% da quantidade de quilos perdidos, totalizando um aumento de até <b style="color: green;">20%</b> de lucro para sua empresa.
+        Com nossos serviços de controle de qualidade no processo de armazenamento, há uma diminuição percentual de 20% da quantidade de quilos perdidos, totalizando um aumento de até <span style="color: green;">20%</span> de lucro para sua empresa.
         <br><br><br>
         <span class="H2">Informações de Mercado</span>
         Peso padrão por saca: 60Kg

@@ -1,0 +1,126 @@
+*{
+    font-family: "Inter", sans-serif;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image: url(./assets/jo-lanta-68KjM0kfsVo-unsplash.jpg);
+    background-repeat: no-repeat;
+    scroll-behavior: smooth;
+}
+
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 120px;
+    width: 100%;
+    background-color: #E3E8EC;
+}
+
+.logo{
+    display: flex;
+    width: 10%;
+    height: 100%;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 45%;
+}
+
+.menu{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.banner{
+    display: flex;
+    height: 500px;
+    width: 94.6%;
+    padding: 40px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;    
+    height: 450px;
+    width: 100%;
+    background-color: #E3E8EC;
+    opacity: 90%;
+    border: #556946 5px solid;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.header-notificacoes{ 
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    align-items: center;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+h3{
+    font-size: 25px;
+}
+
+
+.notificacoes{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    height: 350px;
+    width: 100%;
+}
+
+.notificacao-alerta{
+    display: flex;
+    flex-direction: row;
+    height: 90px;
+    border: 5px solid; 
+    border-radius: 15px;
+    animation: BorderAlerta 0.5s infinite;
+}
+
+h4{
+    margin-left: 30px;
+}
+
+.notificacao-atencao{
+    display: flex;
+    flex-direction: row;
+    height: 90px;
+    border: 5px solid #724A24; 
+    border-radius: 15px;
+
+}
+
+@keyframes BorderAlerta {
+    0% {
+        border-color: #ff5733; 
+    }
+    25% {
+        border-color: #ff5733; 
+    }
+    50% {
+        border-color: #ffc300;
+    }
+    75% {
+        border-color: #ffcc33; 
+    }
+    100% {
+        border-color: #ff5733; 
+    }
+}
