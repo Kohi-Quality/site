@@ -9,8 +9,7 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
-    background-image: url(./assets/jo-lanta-68KjM0kfsVo-unsplash.jpg);
-    background-repeat: no-repeat;
+    background-color: white;
 }
 
 .aside{
