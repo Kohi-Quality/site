@@ -69,7 +69,7 @@ body {
 }
 .form{
     width: 50%;
-    height: 700px;
+    height: 780px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,6 +81,7 @@ body {
 }
 
 .form-header{
+    margin-top: 1rem;
     margin-bottom: 1rem;
     display: flex;
 }
@@ -94,6 +95,11 @@ body {
     margin: 0 auto;
     position: absolute;
     border-radius: 25px;
+}
+
+.div-mensagem{
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .input-group{
@@ -155,6 +161,12 @@ body {
     text-decoration: none;
     font-size: 15px;
     font-weight: 500;
+}
+
+.div_mensagem{
+    color: #000000;
+    font-weight: bold;
+    margin-top: 2%;
 }
 
 .form .login a{
