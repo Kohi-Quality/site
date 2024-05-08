@@ -140,7 +140,7 @@ h3{
 .notificacao-alerta{
     display: flex;
     flex-direction: row;
-    height: 90px;
+    height: 100px;
     border: 10px solid; 
     border-radius: 15px;
     animation: BorderAlerta 0.5s infinite;
@@ -148,14 +148,15 @@ h3{
 }
 
 h4{
-    font-size: 20px;
+    font-size: 25px;
     margin-left: 30px;
 }
 
 .notificacao-atencao{
     display: flex;
     flex-direction: row;
-    height: 90px;
+    justify-content: flex-start;
+    height: 100px;
     border: 10px solid #724A24; 
     border-radius: 15px;
     padding: 20px;
@@ -165,6 +166,20 @@ h4{
     display: flex;
     height: 90px;
     width: 100px;
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90px;
+    align-items: center;
+    justify-content: center;
+}
+
+span{
+    font-weight: bold;
+    font-size: 20px;
 }
 
 @keyframes BorderAlerta {

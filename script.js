@@ -31,7 +31,7 @@ function calcular() {
         div1.innerHTML =
         `<span>
         <h2 class="H2">Simulando:</h2>
-        Ao não utilizar nossos processos de controle, você tem lucro final de café tipo ${tipo} de <span style="color: red;"> ${Total.toLocaleString('pt-br' ,{ style: 'currency', currency: 'BRL' })}</span>.
+        Ao <span style="color: red;">NÃO</span> utilizar nossos processos de controle, você tem lucro final de café tipo ${tipo} de <span style="color: red;"> ${Total.toLocaleString('pt-br' ,{ style: 'currency', currency: 'BRL' })}</span>.
         <br><br>    
         Seus lucros vão para <span style="color: green;">${QuantidadeFinal.toLocaleString('pt-br' ,{ style: 'currency', currency: 'BRL' })}</span> ao utilizar nossos serviços na Kohi Quality.
         <br><br><br>
