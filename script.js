@@ -28,6 +28,9 @@ function calcular() {
             Total *= ValorConilon; // Aproveitamento sem nossos serviços
             QuantidadeFinal *= ValorConilon; // Novo aproveitamento
         }
+
+        var diferenca = QuantidadeFinal - Total;
+
         div1.innerHTML =
         `<span>
         <h2 class="H2">Simulando:</h2>
@@ -35,6 +38,7 @@ function calcular() {
         <br><br>    
         Seus lucros vão para <span style="color: green;">${QuantidadeFinal.toLocaleString('pt-br' ,{ style: 'currency', currency: 'BRL' })}</span> ao utilizar nossos serviços na Kohi Quality.
         <br><br><br>
+        Gerando a diferença de <span style="color: green;">${diferenca.toLocaleString('pt-br' ,{ style: 'currency', currency: 'BRL' })}</span>
         <span class="H2">Informações de Mercado:</span>
         <br><br>
         Peso padrão por saca: 60Kg
@@ -43,6 +47,6 @@ function calcular() {
         <br><br>
         Preço da saca Conilon: R$864,00
         <br><br>
-        <p class="update">Valores atualizados em 20/03/2024</p></span>`;
+        `;
     }
 }
