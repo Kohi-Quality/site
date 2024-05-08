@@ -34,10 +34,6 @@ function calcular() {
         Ao não utilizar nossos processos de controle, você tem lucro final de café tipo ${tipo} de <span style="color: red;"> ${Total.toLocaleString('pt-br' ,{ style: 'currency', currency: 'BRL' })}</span>.
         <br><br>    
         Seus lucros vão para <span style="color: green;">${QuantidadeFinal.toLocaleString('pt-br' ,{ style: 'currency', currency: 'BRL' })}</span> ao utilizar nossos serviços na Kohi Quality.
-        <br><br>
-        <span class="H2">Como Funciona?</span>
-        <br><br>
-        Com nossos serviços de controle de qualidade no processo de armazenamento, há uma diminuição percentual de <span style="color: green;">20%</span> da quantidade de quilos perdidos, totalizando um aumento de até <span style="color: green;">20%</span> de lucro para sua empresa.
         <br><br><br>
         <span class="H2">Informações de Mercado:</span>
         <br><br>

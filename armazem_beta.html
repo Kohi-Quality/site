@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Dashboard - Kohi Quality</title>
+    <title>Armazém Beta - Kohi Quality</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <link rel="icon" href="./assets/LogoKohiPronto.png" type="image/x-icon">
@@ -21,75 +21,105 @@
 
 <body>
 
-    <div class="header">
-        <div class="logo"><img src="./assets/LogoKohiPronto.png" alt="logotipo"></div>
+    <div class="aside">
         <div class="container">
-            <div class="sair"><a href="./dashboard.html">Voltar</a></div>
-            <div class="sair"><a href="./index.html">Sair</a></div>
-        </div>
-    </div>
-
-    <div class="nome_armazem">
-        <h1>ARMAZÉM BETA</h1>
-    </div>
-
-    <div class="armazem">
-
-        <div class="temperatura">
-            <h2>Temperatura Atual:</h2>
-            <h3>24ºC</h3>
-        </div>
-
-        <div class="umidade">
-            <h2>Umidade atual:</h2>
-            <h3>62%</h3>
-        </div>
-
-    </div>
-
-    <div class="container">
-        <div class="menu">
-            <div class="status_umidade" id="status_umidade">
-                <span id="span_status_umidade"><b>Status de Umidade</b></span><br>
-                <span id="span_umidade"></span>
+            
+            <div class="logo">
+                <img src="./assets/LogoKohiPronto.png">
             </div>
-            <div class="status_temperatura" id="status_temperatura">
-                <span id="span_status"><b>Status de Temperatura</b></span><br>
-                <span id="span_temperatura"></span>
-            </div>
-        </div>
 
-        <div class="graficos_linha">
-            <div class="umid">
-                <h1>Sensor DHT 11 - Umidade</h1>
-                <section class="graficos">
-                    <canvas id="dht11Temperatura"></canvas>
-                </section>
+            <div class="texto">
+                <h2>Olá, Cliente</h2>
+                <h4 class="mensagem">Bem-vindo(a) a fazenda Raio de Sol</h4>
             </div>
-            <div class="temp">
-                <h1>Sensor DHT 11 - Temperatura</h1>
-                <section class="graficos">
-                    <canvas id="dht11Umidade"></canvas>
-                </section>
-            </div>
-        </div>
-        <div class="especificacoes">
-            <div class="especificacoes_umidade">
-                <div class="esp_texto">
-                    <span class="span_esp_umid"> <b>Especificações de valores de Umidade</b> </span>
-                    <span class="span_esp_umid">Umidade Ideal: entre 50% e 60% </span>
-                    <span class="alerta_atencao">Alerta de atenção para umidade alta: 59% </span>
-                    <span class="alerta_atencao">Alerta de atenção para umidade baixa: 51%</span>
-                    <span class="alerta_vermelho">Alerta vermelho: acima de 60% e abaixo de 50%</span>
+
+            <div class="legenda">
+                <h4>Legenda Umidade:</h4>
+                
+                <div class="oscilando">
+                    <p>Alerta de umidade alta: 59% - 
+                        Alerta de umidade baixa: 51%</p>
                 </div>
+                
+                <div class="instavel">
+                    <p>Alerta vermelho: acima de 60% e abaixo de 50%</p>
+                </div>
+
+                <h4>Legenda Temperatura:</h4>
+
+                <div class="oscilando">
+                    <p>Alerta de temperatura alta: 21ºC
+                        Alerta de temperatura baixa: 12ºC</p>
+                </div>
+
+                <div class="instavel">
+                    <p>Alerta vermelho: acima de 24ºC e abaixo de 10ºC</p>
+                </div>
+
             </div>
-            <div class="especificacoes_temperatura">
-                <div class="esp_texto">
-                    <span class="span_esp_temp"><b>Especificacoes de valores de Temperatura</b></span>
-                    <span class="span_esp_umid">Temperatura Ideal: entre 10ºC e 23ºC</span>
-                    <span class="alerta_atencao">Alerta de atenção para temperatura alta: 21ºC</span>
-                    <span class="alerta_atencao">Alerta de atenção para temperatura baixa: 12ºC</span>
-                    <span class="alerta_vermelho">Alerta vermelho: acima de 24ºC e abaixo de 10ºC</span>
+
+        </div>
+    </div>
+
+    <div class="dash">
+
+        <div class="header-dash">
+            
+            <div class="nome_armazem">
+                <h1>ARMAZÉM BETA</h1>
+            </div>
+
+            <div class="navbar">
+                <ul class="nav">
+                    <a href="dashboard.html">
+                        <li class="item-menu">Voltar</li>
+                    </a> 
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="body-dash">
+
+            <div class="armazem">
+        
+                <div class="temperatura">
+                    <h2>Temperatura Atual:</h2>
+                    <h3>24ºC</h3>
+                </div>
+        
+                <div class="umidade">
+                    <h2>Umidade atual:</h2>
+                    <h3>62%</h3>
+                </div>
+        
+            </div>
+        
+            <div class="container1">
+                <div class="menu">
+                    <div class="status_umidade" id="status_umidade">
+                        <span id="span_status_umidade"><b>Status de Umidade</b></span><br>
+                        <span id="span_umidade"></span>
+                    </div>
+                    <div class="status_temperatura" id="status_temperatura">
+                        <span id="span_status"><b>Status de Temperatura</b></span><br>
+                        <span id="span_temperatura"></span>
+                    </div>
+                </div>
+        
+                <div class="graficos_linha">
+                    <div class="umid">
+                        <h1>Sensor DHT 11 - Umidade</h1>
+                        <section class="graficos">
+                            <canvas id="dht11Temperatura"></canvas>
+                        </section>
+                    </div>
+                    <div class="temp">
+                        <h1>Sensor DHT 11 - Temperatura</h1>
+                        <section class="graficos">
+                            <canvas id="dht11Umidade"></canvas>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>

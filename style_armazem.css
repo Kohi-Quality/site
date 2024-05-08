@@ -8,7 +8,7 @@ body {
     padding: 0;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 2000px;
     background-color: white;
 }
 
@@ -26,7 +26,6 @@ body {
 .container{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     height: 100%;
     width: 300px;
@@ -35,7 +34,7 @@ body {
 .logo{
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 180px;
     height: 200px;
 }
 
@@ -50,27 +49,91 @@ body {
     font-size: 16px;
 }
 
-.navbar{
+.legenda{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: 500px;
-    width: 300px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.oscilando{
+    display: flex;
+    width: 280px;
+    height: 70px;
+    text-align: center;
+    align-items: center;
+    background-color: #F19710;
+    border: #F19710 solid 5px;
+    border-radius: 10px;
+    color: #CCDEEC;
+    font-weight: bold;
+}
+
+.instavel{
+    display: flex;
+    width: 280px;
+    height: 70px;
+    text-align: center;
+    align-items: center;
+    background-color: #E03A24;
+    border: #E03A24 solid 5px;
+    border-radius: 10px;
+    color: #CCDEEC;
+    font-weight: bold;
+}
+
+.navbar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100px;
+    width: 100px;
 }
 
 .nav{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 250px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
 }
 
 .nav a{
     display: flex;
-    height: 50px;
     justify-content: space-between;
     align-items: center;
+}
+
+
+
+.dash{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: 30px;
+}
+
+.header-dash{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100px;
+}
+
+.nome_armazem {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+
+    h1{
+        margin-left: 250px;
+        font-size: 37px;
+    }
 }
 
 .item-menu{
@@ -84,8 +147,8 @@ body {
     font-weight: bold;
     font-size: 25px;
     color: #556946;
-    margin-top: 40px;
-    
+    margin-left: 100px;
+
 }
 
 .item-menu:hover{
@@ -93,23 +156,10 @@ body {
     background-color: #556946;
 }
 
-
-.dash{
+.body-dash{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 70%px;
-    padding: 30px;
-}
-
-.nome_armazem {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-
-    h1{
-        font-size: 37px;
-    }
+    padding: 40px;
 }
 
 .armazem {
@@ -316,4 +366,10 @@ a:hover{
     -xpedu-transform: scale(1.1);
         -ms-transform: scale(1.1);
         transform: scale(1.05);
+}
+
+a{  
+    width: 250px;
+    height: 100px;
+    text-decoration: none;   
 }
