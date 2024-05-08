@@ -11,53 +11,73 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #E3E8EC;
 }
 
 .header {
-    width: 100%;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 10px black;
     height: 100px;
-    display: flex;
 }
 
-.header .container {
+.header .geral {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 470px;
+    margin-bottom: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+
 }
 
-.header .logo {
+.logo {
     top: 0px;
     left: 0px;
     display: block;
     width: 10%;
 }
 
-.header .logo img {
+.logo img {
     width: 100px;
     height: auto;
 }
 
-.header .container .navbar {
-    width: 650px;
+.navbar {
+    width: 60%;
     list-style: none;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     justify-content: space-evenly;
-    align-items: end;
+    align-items: center;
 }
 
 .navbar a {
-    color: #2E1402;
-    font-size: 20px;
-    font-weight: 600;
+    color: black;
     text-decoration: none;
 }
 
 .navbar a:hover {
-    color: #36561E;
-    text-decoration: none;
+    -xpedu-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.navbar .cadastro {
+    width: 150px;
+    height: 40px;
+    align-content: center;
+    text-align: center;
+    background-color: #556946;
+    color: white;
+    border-radius: 15px;
+    font-weight: bold;
 }
 
 .banner .container {
@@ -69,41 +89,43 @@ body {
     align-items: center;
     background-image: url("./assets/jo-lanta-68KjM0kfsVo-unsplash.jpg");
 
-    .form {
-        width: 400px;
-        height: 450px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background-color: rgba(183, 150, 107, 0.8);
-        padding: 3rem;
-        border-radius: 15px;
-        margin-bottom: 50px;
-
-        .continue-button {
-            border-radius: 5px;
-        }
-
-        .continue-button button {
-            width: 300px;
-            border: none;
-            background-color: #2E1402;
-            padding: 0.62rem;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 30px;
-            transition: 0.5s;
-        }
-
-        .continue-button button:hover {
-        background-color: #36561E;
-        }
-    }
 }
 
+.form {
+    width: 400px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(183, 150, 107, 0.8);
+    padding: 3rem;
+    border-radius: 15px;
+    margin-bottom: 50px;
+}
+
+.continue-button {
+    border-radius: 5px;
+}
+
+.continue-button button {
+    width: 300px;
+    border: none;
+    background-color: #2E1402;
+    padding: 0.62rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: 0.5s;
+}
+
+.continue-button button:hover {
+    background-color: #36561E;
+}
+
+
 .form-header {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     display: flex;
 }
 
@@ -145,7 +167,7 @@ body {
     color: #fff;
 }
 
-.input-group .cadastrar a{
+.input-group .cadastrar a {
     color: #2E1402;
     display: flex;
     text-align: center;
@@ -153,7 +175,7 @@ body {
     margin-top: 20px;
 }
 
-.input-group .cadastrar a:hover{
+.input-group .cadastrar a:hover {
     color: #36561E;
     -xpedu-transform: scale(1.1);
     -ms-transform: scale(1.1);
