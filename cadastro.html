@@ -94,8 +94,8 @@
                     <div class="input-subgroup">
 
                         <div class="input-box">
-                            <p>Logradouro: *</p>
-                            <input type="text" id="input_logradouro" placeholder="Digite o nome da rua">
+                            <p>Rua: *</p>
+                            <input type="text" id="input_rua" placeholder="Digite o nome da rua">
                         </div>
 
                         <div class="input-box">
@@ -174,7 +174,7 @@
 
         var nome_completo = input_nomeCompleto.value;
         var cpf = Number(input_cpf.value);
-        var logradouro = input_logradouro.value;
+        var Rua = input_rua.value;
         var numero = Number(input_numero.value);
         var complemento = input_complemento.value;
         var bairro = input_bairro.value;
@@ -184,7 +184,7 @@
         var senha = input_senha.value;
         var confirmarSenha = input_ConfirmarSenha.value;
 
-        if (nome_completo == "" || cpf == "" || logradouro == "" || numero == "" || bairro == "" || estado == "" || numTelefone == "" || email == "" || senha == "" || confirmarSenha == "") {
+        if (nome_completo == "" || cpf == "" || Rua == "" || numero == "" || bairro == "" || estado == "" || numTelefone == "" || email == "" || senha == "" || confirmarSenha == "") {
             div_mensagem.innerHTML += `Por favor, preencha todos os campos obrigatórios (*) para se cadastrar como cliente<br>`;
         } else if (senha != confirmarSenha) {
             div_mensagem.innerHTML += `Senhas diferentes<br>`;
