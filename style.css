@@ -48,7 +48,7 @@ body {
 }
 
 .navbar {
-    width: 60%;
+    width: 75%;
     list-style: none;
     display: flex;
     justify-content: flex-end;

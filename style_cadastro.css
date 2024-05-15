@@ -48,7 +48,7 @@ body {
 }
 
 .navbar {
-    width: 60%;
+    width: 75%;
     list-style: none;
     display: flex;
     justify-content: flex-end;
@@ -109,7 +109,7 @@ body {
 .form-header h1::after{
     content: '';
     display: block;
-    width: 5rem;
+    width: 6.5rem;
     height: 0.3rem;
     background-color: #36561E;
     margin: 0 auto;
