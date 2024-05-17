@@ -53,9 +53,11 @@ body {
 .legenda{
     display: flex;
     flex-direction: column;
-    height: 500px;
+    height: 0;
     justify-content: space-around;
     align-items: center;
+    overflow: hidden; /* Oculta o conteúdo que vai ser recolhido */
+    transition: height 0.5s; /* Adiciona uma transição suave */
 }
 
 .oscilando{
@@ -136,10 +138,7 @@ body {
         font-size: 37px;
     }
 }
-.nav{
-    position: absolute;
-    left: 30vh;
-}
+
 .item-menu{
     display: flex;
     width: 250px;
@@ -152,12 +151,14 @@ body {
     font-size: 25px;
     color: #556946;
     margin-left: 100px;
-
 }
 
 .item-menu:hover{
     color: #E3E8EC;
     background-color: #556946;
+    -xpedu-transform:scale(1.1);
+    -ms-transform: scale();
+    transform: scale(1.1);
 }
 
 .body-dash{
@@ -378,4 +379,16 @@ a{
     width: 250px;
     height: 100px;
     text-decoration: none;   
+}
+
+
+#toggleButton::before {
+    content: '\25BC'; 
+    display: inline-block;
+    margin-right: 5px; 
+    transition: transform 0.3s ease; 
+}
+
+#toggleButton.expandido::before {
+    transform: rotate(180deg);
 }
