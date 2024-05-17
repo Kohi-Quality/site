@@ -28,7 +28,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: 300px;
 }
 
@@ -49,6 +49,29 @@ body {
 .mensagem{
     font-size: 16px;
 }
+
+.btn-legenda{
+    display: flex;
+    width: 175px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #E3E8EC;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #556946;
+}
+
+.btn-legenda:hover{
+    color: #E3E8EC;
+    background-color: #556946;
+    -xpedu-transform:scale(1.1);
+    -ms-transform: scale();
+    transform: scale(1.1);
+}
+
+
 
 .legenda{
     display: flex;
@@ -141,21 +164,9 @@ body {
     height: 100px;
 }
 
-.nome_armazem {
-    display: flex;
-    width: 50%;
-    justify-content: center;
-    text-align: center;
-
-    h1{
-        margin-left: 250px;
-        font-size: 37px;
-    }
-}
-
 .item-menu{
     display: flex;
-    width: 250px;
+    width: 200px;
     height: 50px;
     justify-content: center;
     align-items: center;
@@ -164,7 +175,18 @@ body {
     font-weight: bold;
     font-size: 25px;
     color: #556946;
-    margin-left: 100px;
+}
+
+.nome_armazem {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+
+    h1{
+        margin-right: 250px;
+        font-size: 37px;
+    }
 }
 
 .item-menu:hover{

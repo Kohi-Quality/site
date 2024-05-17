@@ -39,6 +39,7 @@ function calcular() {
         Seus lucros vão para <span style="color: green;">${QuantidadeFinal.toLocaleString('pt-br' ,{ style: 'currency', currency: 'BRL' })}</span> ao utilizar nossos serviços na Kohi Quality.
         <br><br><br>
         Gerando a diferença de <span style="color: green;">${diferenca.toLocaleString('pt-br' ,{ style: 'currency', currency: 'BRL' })}</span>
+        <br>
         <span class="H2">Informações de Mercado:</span>
         <br><br>
         Peso padrão por saca: 60Kg
