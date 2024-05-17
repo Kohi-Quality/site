@@ -60,6 +60,20 @@ body {
     transition: height 0.5s; /* Adiciona uma transição suave */
 }
 
+.estavel {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: 70px;
+    text-align: center;
+    align-items: center;
+    background-color: #73d645;
+    border: #73d645 solid 5px;
+    border-radius: 10px;
+    color: #CCDEEC;
+    font-weight: bold;
+}
+
 .oscilando{
     display: flex;
     width: 280px;
