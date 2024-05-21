@@ -2,10 +2,10 @@
 <html>
 
 <head>
-    <title>Dashboard - Kohi Quality</title>
+    <title>Silo Beta - Kohi Quality</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <link rel="icon" href="./assets/LogoKohiPronto.png" type="image/x-icon">
+    <link rel="icon" href="../assets/LogoKohiPronto.png" type="image/x-icon">
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -16,7 +16,7 @@
             user-select: none;
         }
     </style>
-    <link rel="stylesheet" href="style_armazem.css">
+    <link rel="stylesheet" href="../css/style_armazem.css">
 </head>
 
 <body>
@@ -25,22 +25,22 @@
         <div class="container">
             
             <div class="logo">
-                <img src="./assets/LogoKohiPronto.png">
+                <img src="../assets/LogoKohiPronto.png">
             </div>
 
             <div class="texto">
                 <h2>Olá, Cliente</h2>
-                <h4 class="mensagem">Bem-vindo(a) a fazenda Raio de Sol</h4>
+                <h4 class="mensagem">Bem-vindo(a) ao seu silo</h4>
             </div>
 
             <div class="legenda">
                 <h4>Legenda Umidade:</h4>
-
+                
                 <div class="oscilando">
                     <p>Alerta de umidade alta: 59% - 
                         Alerta de umidade baixa: 51%</p>
                 </div>
-
+                
                 <div class="instavel">
                     <p>Alerta vermelho: acima de 60% e abaixo de 50%</p>
                 </div>
@@ -57,18 +57,14 @@
                 </div>
 
             </div>
+
         </div>
     </div>
-
 
     <div class="dash">
 
         <div class="header-dash">
-    
-            <div class="nome_armazem">
-                <h1>ARMAZÉM KAPPA</h1>
-            </div>
-
+            
             <div class="navbar">
                 <ul class="nav">
                     <a href="dashboard.html">
@@ -76,53 +72,57 @@
                     </a> 
                 </ul>
             </div>
-        </div>
-
-    <div class="body-dash">
-        <div class="armazem">
-    
-            <div class="temperatura">
-                <h2>Umidade atual:</h2>
-                <h3>51%</h3>
-            </div>
-    
-            <div class="umidade">
-                <h2>Temperatura Atual:</h2>
-                <h3>14.5ºC</h3>
-            </div>
-    
-        </div>
-    
-        <div class="container1">
-            <div class="menu">
-                <div class="status_umidade" id="status_umidade">
-                    <span id="span_status_umidade"><b>Status de Umidade</b></span><br>
-                    <span id="span_umidade"></span>
-                </div>
-                <div class="status_temperatura" id="status_temperatura">
-                    <span id="span_status"><b>Status de Temperatura</b></span><br>
-                    <span id="span_temperatura"></span>
-                </div>
-            </div>
-    
-            <div class="graficos_linha">
-                <div class="umid">
-                    <h1>Sensor DHT 11 - Umidade</h1>
-                    <section class="graficos">
-                        <canvas id="dht11Temperatura"></canvas>
-                    </section>
-                </div>
-                <div class="temp">
-                    <h1>Sensor DHT 11 - Temperatura</h1>
-                    <section class="graficos">
-                        <canvas id="dht11Umidade"></canvas>
-                    </section>
-                </div>
+            
+            <div class="nome_armazem">
+                <h1>SILO BETA</h1>
             </div>
             
         </div>
+        
+        <div class="body-dash">
 
-    </div>
+            <div class="armazem">
+        
+                <div class="temperatura">
+                    <h2>Umidade atual:</h2>
+                    <h3>62%</h3>
+                </div>
+        
+                <div class="umidade">
+                    <h2>Temperatura Atual:</h2>
+                    <h3>24ºC</h3>
+                </div>
+        
+            </div>
+        
+            <div class="container1">
+                <div class="menu">
+                    <div class="status_umidade" id="status_umidade">
+                        <span id="span_status_umidade"><b>Status de Umidade</b></span><br>
+                        <span id="span_umidade"></span>
+                    </div>
+                    <div class="status_temperatura" id="status_temperatura">
+                        <span id="span_status"><b>Status de Temperatura</b></span><br>
+                        <span id="span_temperatura"></span>
+                    </div>
+                </div>
+        
+                <div class="graficos_linha">
+                    <div class="umid">
+                        <h1>Sensor DHT 11 - Umidade</h1>
+                        <section class="graficos">
+                            <canvas id="dht11Temperatura"></canvas>
+                        </section>
+                    </div>
+                    <div class="temp">
+                        <h1>Sensor DHT 11 - Temperatura</h1>
+                        <section class="graficos">
+                            <canvas id="dht11Umidade"></canvas>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>
