@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Silo Kappa - Kohi Quality</title>
+    <title>Silo - Kohi Quality</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <link rel="icon" href="../assets/LogoKohiPronto.png" type="image/x-icon">
@@ -23,7 +23,7 @@
 
     <div class="aside">
         <div class="container">
-            
+
             <div class="logo">
                 <img src="../assets/LogoKohiPronto.png">
             </div>
@@ -33,11 +33,19 @@
                 <h4 class="mensagem">Bem-vindo(a) ao seu silo</h4>
             </div>
 
+            <button onclick="toggleDiv()" id="toggleButton" class="btn-legenda">Legendas</button>
+
+
             <div class="legenda">
                 <h4>Legenda Umidade:</h4>
 
+                <div class="estavel">
+                    <p>Umidade Ideal:
+                    Entre 50% e 60%</p>
+                </div>
+
                 <div class="oscilando">
-                    <p>Alerta de umidade alta: 59% - 
+                    <p>Alerta de umidade alta: 59% -
                         Alerta de umidade baixa: 51%</p>
                 </div>
 
@@ -46,6 +54,11 @@
                 </div>
 
                 <h4>Legenda Temperatura:</h4>
+
+                <div class="estavel">
+                    <p>Temperatura Ideal:
+                    Entre 10ºC e 23ºC</p>
+                </div>
 
                 <div class="oscilando">
                     <p>Alerta de temperatura alta: 21ºC
@@ -57,9 +70,9 @@
                 </div>
 
             </div>
+
         </div>
     </div>
-
 
     <div class="dash">
 
@@ -69,62 +82,62 @@
                 <ul class="nav">
                     <a href="dashboard.html">
                         <li class="item-menu">Voltar</li>
-                    </a> 
+                    </a>
                 </ul>
             </div>
 
             <div class="nome_armazem">
-                <h1>SILO KAPPA</h1>
+                <h1>SILO ALFA</h1>
             </div>
 
-        </div>
-
-    <div class="body-dash">
-        <div class="armazem">
-    
-            <div class="temperatura">
-                <h2>Umidade atual:</h2>
-                <h3>51%</h3>
-            </div>
-    
-            <div class="umidade">
-                <h2>Temperatura Atual:</h2>
-                <h3>14.5ºC</h3>
-            </div>
-    
-        </div>
-    
-        <div class="container1">
-            <div class="menu">
-                <div class="status_umidade" id="status_umidade">
-                    <span id="span_status_umidade"><b>Status de Umidade</b></span><br>
-                    <span id="span_umidade"></span>
-                </div>
-                <div class="status_temperatura" id="status_temperatura">
-                    <span id="span_status"><b>Status de Temperatura</b></span><br>
-                    <span id="span_temperatura"></span>
-                </div>
-            </div>
-    
-            <div class="graficos_linha">
-                <div class="umid">
-                    <h1>Sensor DHT 11 - Umidade</h1>
-                    <section class="graficos">
-                        <canvas id="dht11Temperatura"></canvas>
-                    </section>
-                </div>
-                <div class="temp">
-                    <h1>Sensor DHT 11 - Temperatura</h1>
-                    <section class="graficos">
-                        <canvas id="dht11Umidade"></canvas>
-                    </section>
-                </div>
-            </div>
             
         </div>
 
-    </div>
-    </div>
+        <div class="body-dash">
+            <div class="armazem">
+
+                <div class="temperatura">
+                    <h2>Umidade atual:</h2>
+                    <h3>54%</h3>
+                </div>
+
+                <div class="umidade">
+                    <h2>Temperatura Atual:</h2>
+                    <h3>18.5ºC</h3>
+                </div>
+
+            </div>
+
+            <div class="container1">
+                <div class="menu">
+                    <div class="status_umidade" id="status_umidade">
+                        <span id="span_status_umidade"><b>Status de Umidade</b></span><br>
+                        <span id="span_umidade"></span>
+                    </div>
+                    <div class="status_temperatura" id="status_temperatura">
+                        <span id="span_status"><b>Status de Temperatura</b></span><br>
+                        <span id="span_temperatura"></span>
+                    </div>
+                </div>
+
+                <div class="graficos_linha">
+                    <div class="umid">
+                        <h1>Sensor DHT 11 - Umidade</h1>
+                        <section class="graficos">
+                            <canvas id="dht11Temperatura"></canvas>
+                        </section>
+                    </div>
+                    <div class="temp">
+                        <h1>Sensor DHT 11 - Temperatura</h1>
+                        <section class="graficos">
+                            <canvas id="dht11Umidade"></canvas>
+                        </section>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
 
 </body>
 
@@ -247,5 +260,22 @@
             }
         }
     );
+
+    let divVisivel = false; // Variável para controlar o estado da div
+
+function toggleDiv() {
+    const minhaDiv = document.querySelector('.legenda'); // Seleciona a div
+    const toggleButton = document.getElementById('toggleButton'); // Seleciona o botão
+
+    if (divVisivel) {
+        minhaDiv.style.height = '0'; // Recolhe a div se estiver visível
+        toggleButton.classList.remove('expandido'); // Remove a classe 'expandido' do botão
+    } else {
+        minhaDiv.style.height = '600px'; // Expandir a div se estiver recolhida
+        toggleButton.classList.add('expandido'); // Adiciona a classe 'expandido' ao botão
+    }
+    divVisivel = !divVisivel; // Inverte o estado da div
+}
+
 
 </script>
