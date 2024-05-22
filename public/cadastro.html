@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/LogoKohiPronto.png" type="image/x-icon">
-    <link rel="stylesheet" href="../public/css/style_cadastro.css">
+    <link rel="stylesheet" href="../css/style_cadastro.css">
     <title>Kohi Quality-Cadastro</title>
 </head>
 
@@ -37,7 +37,7 @@
                     <a href="login.html">
                         <li>Login</li>
                     </a>
-                    
+
                 </ul>
             </div>
         </div>
@@ -53,7 +53,7 @@
 
                 </div>
                 <div class="div-mensagem">
-             <p> Por favor, preencha todos os campos obrigatórios (*)</p>
+                    <p> Por favor, preencha todos os campos obrigatórios (*)</p>
                 </div>
                 <div class="input-group">
                     <div class="input-subgroup">
@@ -77,7 +77,7 @@
                             <input type="email" id="input_email" placeholder="Digite seu email">
                         </div>
 
-                        
+
                         <div class="input-box">
                             <p>Senha: *</p>
                             <input type="password" id="input_senha" placeholder="Crie uma senha">
@@ -148,7 +148,7 @@
 
                 </div>
                 <div class="continue-button">
-                    <button onclick="cadastrar()">Cadastrar</button>
+                    <button onclick="validacaoCadastro()">Cadastre-se</button>
                 </div>
 
                 <div class="login">
@@ -167,7 +167,7 @@
 </html>
 
 <script>
-    function cadastrar() {
+    function validacaoCadastro() {
         div_mensagem.innerHTML = ""
 
         var nome_completo = input_nomeCompleto.value;
@@ -214,6 +214,127 @@
         }
     }
 
+    // !!!!!!!!!!!!! WEB-DATA-VIZ !!!!!!!!!!!!!
 
+    function cadastrar() {
+        aguardar();
 
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+
+        //   TRAZENDO VARIAVEIS DA TELA DE CADASTRO
+
+        var nomeCompleto = input_nomeCompleto.value;
+        var cpf = Number(input_cpf.value);
+        var Rua = input_rua.value;
+        var numero = Number(input_numero.value);
+        var complemento = input_complemento.value;
+        var bairro = input_bairro.value;
+        var estado = select_estado.value;
+        var numTelefone = Number(input_numTelefone.value);
+        var email = input_email.value;
+        var senha = input_senha.value;
+        var confirmarSenha = input_ConfirmarSenha.value;
+
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var empresaVar = listaEmpresas.value
+
+        if (
+            nomeVar == "" ||
+            emailVar == "" ||
+            senhaVar == "" ||
+            confirmacaoSenhaVar == "" ||
+            empresaVar == ""
+        ) {
+            alert("Mensagem de erro para todos os campos em branco");
+
+            finalizarAguardar();
+            return false;
+        } else {
+            setInterval(sumirMensagem, 5000);
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+
+                //VARIAVEIS PARA O CORPO DA REQUISIÇÃO
+
+                // nomeServer: nomeVar,
+                // emailServer: emailVar,
+                // senhaServer: senhaVar,
+                // empresaServer: empresaVar
+
+                nomeCompletoServer: nome_completo,
+                cpfServer: cpf,
+                RuaServer: Rua,
+                numeroServer: numero,
+                complementoServer: complemento,
+                bairroServer: bairro,
+                estadoServer: estado,
+                numTelefoneServer: numTelefone,
+                emailServer: email,
+                senhaServer: senha,
+                confirmarSenhaServer: confirmarSenha
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    // cardErro.style.display = "block";
+
+                    alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...")
+
+                    // mensagem_erro.innerHTML =
+                    //     "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                    setTimeout(() => {
+                        window.location = "login.html";
+                    }, "2000");
+
+                    limparFormulario();
+                    finalizarAguardar();
+
+                } else {
+                    throw "Houve um erro ao tentar realizar o cadastro!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                finalizarAguardar();
+            });
+
+        return false;
+    }
+
+    function listar() {
+        fetch("/empresas/listar", {
+            method: "GET",
+        })
+            .then(function (resposta) {
+                resposta.json().then((empresas) => {
+                    empresas.forEach((empresa) => {
+                        listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+                    });
+                });
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none";
+        alert("'-'")
+    }
 </script>
