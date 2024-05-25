@@ -22,7 +22,7 @@
             </div>
 
             <div class="texto">
-                <h2>Olá, Cliente</h2>
+                <h2>Olá, <span id="idUsuario"></span></h2>
                 <h4 class="mensagem">Bem-vindo(a) a fazenda Raio de Sol</h4>
             </div>
 
@@ -105,3 +105,7 @@
 
     </div>
 </body>
+
+<script>
+    idUsuario.innerHTML = sessionStorage.NOME_USUARIO;
+</script>
