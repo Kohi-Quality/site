@@ -7,7 +7,6 @@ CREATE TABLE empresa (
 	razao_social VARCHAR(50),
 	cnpj CHAR(14)
 );
-select * from usuario;
 
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -27,19 +26,11 @@ CREATE TABLE aviso (
 );
 
 create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	descricao VARCHAR(300),
 	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id));
-
-
-insert into aquario (descricao, fk_empresa) values 
-('Armazem café arábica', 1), 
-('Aquário café conilon', 1);
-
-
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
+	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+);
 
 create table medida (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -53,13 +44,14 @@ create table medida (
 	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
 );
 
-INSERT INTO medida (dht11_umidade, dht11_temperatura, luminosidade, lm35_temperatura, chave, momento, fk_aquario) VALUES
-(55.3, 22.1, 150.5, 23.7, 1, '2023-05-28 12:34:56', 1),
-(60.8, 24.3, 200.1, 25.9, 0, '2023-06-14 08:45:32', 1),
-(55.3, 22.1, 150.5, 23.7, 1, '2023-05-28 12:34:56', 2),
-(60.8, 24.3, 200.1, 25.9, 0, '2023-06-14 08:45:32', 2);
-
-
 insert into empresa (razao_social, cnpj) values 
-('Melitta', '00000000000000'),
-('Pilão', '11111111111111');
+('Pilão','87455632100554'),
+('Melitta','12236650021548');
+
+insert into aquario (descricao, fk_empresa) values 
+('Silo café Arabica', 1),
+('Silo café Conilon',1);
+
+
+
+
