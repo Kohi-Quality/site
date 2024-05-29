@@ -2,210 +2,173 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="../assets/LogoKohiPronto.png" type="image/x-icon" />
-  <link rel="stylesheet" href="../css/style_login.css" />
-  <title>Kohi Quality-Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/LogoKohiPronto.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style_login.css" />
+
+    <script src="./js/sessao.js"></script>
+
+    <title>Kohi Quality-Login</title>
 </head>
 
 <body>
 
-  <div class="header">
-    <div class="geral">
-        <div class="container">
-            <div class="logo">
-                <img src="../assets/LogoKohiPronto.png" />
+    <div class="header">
+        <div class="geral">
+            <div class="container">
+                <div class="logo">
+                    <img src="./assets/LogoKohiPronto.png" />
+                </div>
+                <ul class="navbar">
+                    <a href="./index.html">
+                        <li>Home</li>
+                    </a>
+                    <a href="index.html#section4">
+                        <li>Sobre</li>
+                    </a>
+                    <a href="index.html#section3">
+                        <li>Feedbacks</li>
+                    </a>
+                    <a href="index.html#section5">
+                        <li>Simule</li>
+                    </a>
+                    <a href="index.html#section6">
+                        <li>Contato</li>
+                    </a>
+                    <li> | </li>
+
+                    <a href="cadastro.html">
+                        <li class="cadastro">Cadastre-se</li>
+                    </a>
+                </ul>
             </div>
-            <ul class="navbar">
-                <a href="./index.html">
-                    <li>Home</li>
-                </a>
-                <a href="index.html#section4">
-                    <li>Sobre</li>
-                </a>
-                <a href="index.html#section3">
-                    <li>Feedbacks</li>
-                </a>
-                <a href="index.html#section5">
-                    <li>Simule</li>
-                </a>
-                <a href="index.html#section6">
-                    <li>Contato</li>
-                </a>
-                <li> | </li>
-              
-                <a href="cadastro.html">
-                    <li class="cadastro">Cadastre-se</li>
-                </a>
-            </ul>
         </div>
     </div>
-</div>
 
-  <div class="banner">
+    <div class="banner">
 
-    <div class="container">
+        <div class="container">
 
-      <div class="form">
+            <div class="form">
 
-        <div class="form-header">
-          <div class="title">
-            <h1>Login</h1>
-          </div>
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Login</h1>
+                    </div>
+                </div>
+
+                <div class="input-group">
+
+                    <div class="input-box">
+                        <label for="email">Email :</label>
+                        <input type="email" id="email_input" placeholder="Digite seu email" />
+                    </div>
+
+                    <div class="input-box">
+                        <label for="senha">Senha: </label>
+                        <input type="password" id="senha_input" placeholder="******" />
+                    </div>
+
+                    <div class="continue-button">
+                        <button onclick="entrar()"><a href="#">Entrar</a></button>
+                    </div>
+
+                    <div class="cadastrar">
+                        <a href="./cadastro.html">Cadastre-se</a>
+                    </div>
+
+                    <div class="card_erro" id="cardErro">
+                        <span id="mensagem_erro"></span>
+                    </div>
+
+                    <div id="div_aguardar" class="loading-div">
+                        <img src="./assets/circle-loading.gif" id="loading-gif">
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-
-        <div class="input-group">
-
-          <div class="input-box">
-            <label for="email">Email :</label>
-            <input type="email" id="email_input" placeholder="Digite seu email" />
-          </div>
-
-          <div class="input-box">
-            <label for="senha">Senha: </label>
-            <input type="password" id="senha_input" placeholder="******" />
-          </div>
-
-          <div class="continue-button">
-            <button onclick="entrar()"><a href="#">Entrar</a></button>
-          </div>
-
-          <div class="cadastrar">
-            <a href="./cadastro.html">Cadastre-se</a>
-          </div>
-
-        </div>
-
-      </div>
 
     </div>
-
-  </div>
 
 </body>
 
 </html>
 
+
 <script>
 
 
-  function entrar() {
-      // aguardar();
+    function entrar() {
+        aguardar();
 
-      var emailVar = email_input.value;
-      var senhaVar = senha_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
 
-      if (emailVar == "" || senhaVar == "") {
-          // cardErro.style.display = "block"
-          mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-          alert("Por favor preencha todos os campos !")
-          finalizarAguardar();
-          // return false;
-      }
-      else {
-          // setInterval(sumirMensagem, 5000)
-      
-
-      console.log("FORM LOGIN: ", emailVar);
-      console.log("FORM SENHA: ", senhaVar);
-
-      fetch("/usuarios/autenticar", {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-              emailServer: emailVar,
-              senhaServer: senhaVar
-          })
-      }).then(function (resposta) {
-          console.log("ESTOU NO THEN DO entrar()!")
-
-          if (resposta.ok) {
-              console.log(resposta);
-
-              resposta.json().then(json => {
-                  console.log(json);
-                  console.log(JSON.stringify(json));
-                  sessionStorage.EMAIL_USUARIO = json.email;
-                  sessionStorage.NOME_USUARIO = json.nomeCompleto;
-                  sessionStorage.ID_USUARIO = json.idUsuario;
-                  // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
-
-                  // setTimeout(function () {
-                      window.location = "./dashboard/dashboard.html";
-                  // }, 1000); // apenas para exibir o loading
-
-              });
-
-          } else {
-
-              console.log("Houve um erro ao tentar realizar o login!");
-
-              resposta.text().then(texto => {
-                  console.error(texto);
-                  // finalizarAguardar(texto);
-              });
-          }
-
-      }).catch(function (erro) {
-          console.log(erro);
-      })
-
-      return false;
-  }
-
-  // function sumirMensagem() {
-  //     cardErro.style.display = "none"
-  // }
-}
-</script>
-
-
-
-<!-- <script>
-
-  var tentativas = 3;
-
-  function entrar() {
-    var email = input_email.value;
-    var senha = input_senha.value;
-
-    if (email != '' && senha != '') {
-
-      for (var contador = tentativas; contador > 0; contador--) {
-        if (email == 'cliente@email.com' && senha == 'cliente123!') {
-          window.location.href = '../dashboard/dashboard.html';
-
-          input_email = '';
-          input_senha = '';
-
-          tentativas = 3;
-
-          break;
-
-        } else {
-          tentativas--;
-
-          contador = tentativas;
-
-          alert(`Login incorreto. Restam ${contador} tentativas.`);
-
-          break
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
         }
-      }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
 
-      if (tentativas == 0) {
-        alert("Você não tem mais tentativas.");
-        window.location.href = 'cadastro.html';
-      }
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
 
-    } else {
-      alert("Preencha os campos!");
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
     }
 
-  }
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
 
-</script> -->
-
+</script>

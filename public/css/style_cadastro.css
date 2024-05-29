@@ -101,7 +101,7 @@ body {
 }
 
 .form-header{
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     margin-bottom: 1rem;
     display: flex;
 }
@@ -167,7 +167,7 @@ body {
     cursor: pointer;
     font-size: 15px;
     color: #fff;
-    margin-top: 280px;
+    /* margin-top: 280px; */
 }
 
 .continue-button button:hover{

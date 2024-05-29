@@ -2,338 +2,216 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets/LogoKohiPronto.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/style_cadastro.css">
-    <title>Kohi Quality-Cadastro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/LogoKohiPronto.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style_cadastro.css">
+
+  <script src="./js/sessao.js"></script>
+ 
+  <title>Kohi Quality-Cadastro</title>
 </head>
 
-<body>
+<body onload="listar()">
 
-    <div class="header">
-        <div class="geral">
-            <div class="container">
-                <div class="logo">
-                    <img src="./assets/LogoKohiPronto.png" />
-                </div>
-                <ul class="navbar">
-                    <a href="./index.html">
-                        <li>Home</li>
-                    </a>
-                    <a href="index.html#section4">
-                        <li>Sobre</li>
-                    </a>
-                    <a href="index.html#section3">
-                        <li>Feedbacks</li>
-                    </a>
-                    <a href="index.html#section5">
-                        <li>Simule</li>
-                    </a>
-                    <a href="index.html#section6">
-                        <li>Contato</li>
-                    </a>
-                    <li> | </li>
-                    <a href="login.html">
-                        <li>Login</li>
-                    </a>
-
-                </ul>
-            </div>
+  <div class="header">
+    <div class="geral">
+      <div class="container">
+        <div class="logo">
+          <img src="./assets/LogoKohiPronto.png" />
         </div>
+        <ul class="navbar">
+          <a href="./index.html">
+            <li>Home</li>
+          </a>
+          <a href="index.html#section4">
+            <li>Sobre</li>
+          </a>
+          <a href="index.html#section3">
+            <li>Feedbacks</li>
+          </a>
+          <a href="index.html#section5">
+            <li>Simule</li>
+          </a>
+          <a href="index.html#section6">
+            <li>Contato</li>
+          </a>
+          <li> | </li>
+          <a href="login.html">
+            <li>Login</li>
+          </a>
+
+        </ul>
+      </div>
     </div>
+  </div>
 
-    <div class="banner">
-        <div class="container">
-            <div class="form">
-                <div class="form-header">
-                    <div class="title">
-                        <h1>Cadastre-se</h1>
-                    </div>
+  <div class="banner">
+    <div class="container">
+      <div class="form">
+        <div class="form-header">
+          <div class="title">
+            <h1>Cadastre-se</h1>
+          </div>
 
-                </div>
-                <div class="div-mensagem">
-                    <p> Por favor, preencha todos os campos obrigatórios (*)</p>
-                </div>
-                <div class="input-group">
-                    <div class="input-subgroup">
-                        <div class="input-box">
-                            <p>Nome Completo: *</p>
-                            <input type="text" id="input_nomeCompleto" placeholder="Digite seu nome completo">
-                        </div>
-
-                        <div class="input-box">
-                            <p>CPF: *</p>
-                            <input type="text" id="input_cpf" placeholder="Ex.: 000.000.000-00">
-                        </div>
-
-                        <div class="input-box">
-                            <p>Número de telefone: *</p>
-                            <input type="text" id="input_numeroTelefone" placeholder="Ex.: (00) 0000-0000">
-                        </div>
-
-                        <div class="input-box">
-                            <p>Email: *</p>
-                            <input type="email" id="input_email" placeholder="Digite seu email">
-                        </div>
-
-
-                        <div class="input-box">
-                            <p>Senha: *</p>
-                            <input type="password" id="input_senha" placeholder="Crie uma senha">
-                        </div>
-
-                        <div class="input-box">
-                            <p>Confirmar Senha: *</p>
-                            <input type="password" id="input_ConfirmarSenha" placeholder="Confirmar sua senha">
-                        </div>
-
-                    </div>
-                    <div class="input-subgroup">
-
-                        <div class="input-box">
-                            <p>logradouro: *</p>
-                            <input type="text" id="input_logradouro" placeholder="Digite o nome da logradouro">
-                        </div>
-
-                        <div class="input-box">
-                            <p>Número: *</p>
-                            <input type="text" id="input_numero" placeholder="N°">
-                        </div>
-
-                        <div class="input-box">
-                            <p>Complemento: </p>
-                            <input type="text" id="input_complemento" placeholder="Complemento(opcional)">
-                        </div>
-
-                        <div class="input-box">
-                            <p>Bairro: *</p>
-                            <input type="text" id="input_bairro" placeholder="Digite o nome do bairro">
-                        </div>
-
-                        <div class="input-box">
-                            <p>Estado: *</p>
-                            <select name="estado" id="select_estado">
-                                <option value="AC">Acre</option>
-                                <option value="AL">Alagoas</option>
-                                <option value="AP">Amapá</option>
-                                <option value="AM">Amazonas</option>
-                                <option value="BA">Bahia</option>
-                                <option value="CE">Ceará</option>
-                                <option value="DF">Distrito Federal</option>
-                                <option value="ES">Espírito Santo</option>
-                                <option value="GO">Goiás</option>
-                                <option value="MA">Maranhão</option>
-                                <option value="MT">Mato Grosso</option>
-                                <option value="MS">Mato Grosso do Sul</option>
-                                <option value="MG">Minas Gerais</option>
-                                <option value="PA">Pará</option>
-                                <option value="PB">Paraíba</option>
-                                <option value="PR">Paraná</option>
-                                <option value="PE">Pernambuco</option>
-                                <option value="PI">Piauí</option>
-                                <option value="RJ">Rio de Janeiro</option>
-                                <option value="RN">Rio Grande do Norte</option>
-                                <option value="RS">Rio Grande do Sul</option>
-                                <option value="RO">Rondônia</option>
-                                <option value="RR">Roraima</option>
-                                <option value="SC">Santa Catarina</option>
-                                <option value="SP">São Paulo</option>
-                                <option value="SE">Sergipe</option>
-                                <option value="TO">Tocantins</option>
-                            </select>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="continue-button">
-                    <button onclick="validacaoCadastro()">Cadastre-se</button>
-                </div>
-
-                <div class="login">
-                    <a href="./login.html">Login</a>
-                </div>
-
-                <div class="div_mensagem" id="div_mensagem"></div>
-
-            </div>
         </div>
+
+        <div class="card_erro" id="cardErro">
+          <span id="mensagem_erro"></span>
+        </div>
+
+
+
+        <div class="div-mensagem">
+          <p> Por favor, preencha todos os campos obrigatórios (*)</p>
+        </div>
+        <div class="input-group">
+          <div class="input-subgroup">
+
+            <div class="input-box">
+              <span>Empresa:</span>
+              <select name="empresas" id="listaEmpresas">
+                <option selected>Selecione uma empresa</option>
+              </select>
+            </div>
+            <div class="input-box">
+              <span>Nome:</span>
+              <input id="nome_input" type="text" placeholder="Seu nome" />
+            </div>
+            <div class="input-box">
+              <span>E-mail:</span>
+              <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+            </div>
+            <div class="input-box">
+              <span>Senha:</span>
+              <input id="senha_input" type="password" placeholder="******" />
+            </div>
+            <div class="input-box">
+              <span>Confirmação da Senha:</span>
+              <input id="confirmacao_senha_input" type="password" placeholder="******" />
+            </div>
+
+            <div class="continue-button">
+              <button onclick="cadastrar()">Cadastre-se</button>
+            </div>
+
+            <div id="div_aguardar" class="loading-div">
+              <img src="./assets/circle-loading.gif" id="loading-gif" />
+            </div>
+    
+            <div id="div_erros_login"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+      <!-- <div class="continue-button"> -->
+        <!-- <button onclick="validacaoCadastro()">Cadastre-se</button> -->
+      <!-- </div> -->
+
+      <div class="login">
+        <a href="./login.html">Login</a>
+      </div>
+
+      <div class="div_mensagem" id="div_mensagem"></div>
+
     </div>
-    </div>
+  </div>
+  </div>
+  </div>
 
 </body>
 
 </html>
 
 <script>
-    function validacaoCadastro() {
-        div_mensagem.innerHTML = ""
+  function cadastrar() {
+    aguardar();
 
-        var nome_completo = input_nomeCompleto.value;
-        var cpf = Number(input_cpf.value);
-        var logradouro = input_logradouro.value;
-        var numero = Number(input_numero.value);
-        var complemento = input_complemento.value;
-        var bairro = input_bairro.value;
-        var estado = select_estado.value;
-        var numeroTelefone = Number(input_numeroTelefone.value);
-        var email = input_email.value;
-        var senha = input_senha.value;
-        var confirmarSenha = input_ConfirmarSenha.value;
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = nome_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    var empresaVar = listaEmpresas.value
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmacaoSenhaVar == "" ||
+      empresaVar == ""
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Mensagem de erro para todos os campos em branco)";
 
-        if (nome_completo == "" || cpf == "" || logradouro == "" || numero == "" || bairro == "" || estado == "" || numeroTelefone == "" || email == "" || senha == "" || confirmarSenha == "") {
-            div_mensagem.innerHTML += `Por favor, preencha todos os campos obrigatórios (*) para se cadastrar como cliente<br>`;
-        } else if (senha != confirmarSenha) {
-            div_mensagem.innerHTML += `Senhas diferentes<br>`;
-        } else if (senha.length < 8) {
-            div_mensagem.innerHTML += `A senha deve ter pelo menos 8 caracteres<br>`;
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+        empresaServer: empresaVar
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
         } else {
-
-            var caracteresEspeciais = "!@#$%^&*()-+";
-            var temCaracterEspecial = false;
-
-            for (var i = 0; i < senha.length; i++) {
-                if (caracteresEspeciais.indexOf(senha[i]) !== -1) {
-                    temCaracterEspecial = true;
-                    break;
-                }
-            }
-
-            if (!temCaracterEspecial) {
-                div_mensagem.innerHTML += `A senha deve conter pelo menos um caractere especial<br>`;
-            } else {
-                var indice_arroba = email.indexOf("@");
-
-                if (indice_arroba < 0) {
-                    div_mensagem.innerHTML += `Email inválido<br>`;
-                } else {
-                    //window.location.href = "login.html";
-                    cadastrar()
-                }
-            }
+          throw "Houve um erro ao tentar realizar o cadastro!";
         }
-    }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
 
-    // !!!!!!!!!!!!! WEB-DATA-VIZ !!!!!!!!!!!!!
+    return false;
+  }
 
-    function cadastrar() {
-        // aguardar();
+  function listar() {
+    fetch("/empresas/listar", {
+      method: "GET",
+    })
+      .then(function (resposta) {
+        resposta.json().then((empresas) => {
+          empresas.forEach((empresa) => {
+            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+          });
+        });
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  }
 
-        //Recupere o valor da nova input pelo nome do id
-        // Agora vá para o método fetch logo abaixo
-
-        //   TRAZENDO VARIAVEIS DA TELA DE CADASTRO
-
-        var nomeCompleto = input_nomeCompleto.value;
-        var cpf = Number(input_cpf.value);
-        var logradouro = input_logradouro.value;
-        var numero = Number(input_numero.value);
-        var complemento = input_complemento.value;
-        var bairro = input_bairro.value;
-        var estado = select_estado.value;
-        var numeroTelefone = Number(input_numeroTelefone.value);
-        var email = input_email.value;
-        var senha = input_senha.value;
-
-        // var nomeVar = nome_input.value;
-        // var emailVar = email_input.value;
-        // var senhaVar = senha_input.value;
-        // var confirmacaoSenhaVar = confirmacao_senha_input.value;
-        // var empresaVar = listaEmpresas.value
-
-        // if (
-        //     nomeVar == "" ||
-        //     emailVar == "" ||
-        //     senhaVar == "" ||
-        //     confirmacaoSenhaVar == "" ||
-        //     empresaVar == ""
-        // ) {
-        //     alert("Mensagem de erro para todos os campos em branco");
-
-        //     finalizarAguardar();
-        //     return false;
-        // } else {
-        //     setInterval(sumirMensagem, 5000);
-        // }
-
-        // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-
-                //VARIAVEIS PARA O CORPO DA REQUISIÇÃO
-
-                // nomeServer: nomeVar,
-                // emailServer: emailVar,
-                // senhaServer: senhaVar,
-                // empresaServer: empresaVar
-
-                nomeCompletoServer: nomeCompleto,
-                cpfServer: cpf,
-                logradouroServer: logradouro,
-                numeroServer: numero,
-                complementoServer: complemento,
-                bairroServer: bairro,
-                estadoServer: estado,
-                numeroTelefoneServer: numeroTelefone,
-                emailServer: email,
-                senhaServer: senha
-            }),
-        })
-            .then(function (resposta) {
-                console.log("resposta: ", resposta);
-
-                if (resposta.ok) {
-                    // cardErro.style.display = "block";
-
-                    alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...")
-
-                    // mensagem_erro.innerHTML =
-                    //     "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-                    // setTimeout(() => {
-                        window.location = "../login.html";
-                    // }, "2000");
-
-                    // limparFormulario();
-                    // finalizarAguardar();
-
-                } else {
-                    throw "Houve um erro ao tentar realizar o cadastro!";
-                }
-            })
-            .catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
-                // finalizarAguardar();
-            });
-
-        return false;
-    }
-
-    // function listar() {
-    //     fetch("/empresas/listar", {
-    //         method: "GET",
-    //     })
-    //         .then(function (resposta) {
-    //             resposta.json().then((empresas) => {
-    //                 empresas.forEach((empresa) => {
-    //                     listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
-    //                 });
-    //             });
-    //         })
-    //         .catch(function (resposta) {
-    //             console.log(`#ERRO: ${resposta}`);
-    //         });
-    // }
-
-    // function sumirMensagem() {
-    //     cardErro.style.display = "none";
-    //     alert("'-'")
-    // }
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
 </script>
