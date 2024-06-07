@@ -91,24 +91,20 @@
 
 
   function entrar() {
-      // aguardar();
 
       var emailVar = email_input.value;
       var senhaVar = senha_input.value;
 
       if (emailVar == "" || senhaVar == "") {
-          // cardErro.style.display = "block"
+
           mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
           alert("Por favor preencha todos os campos !")
-          finalizarAguardar();
-          // return false;
+
       }
       else {
-          // setInterval(sumirMensagem, 5000)
-      
 
-      console.log("FORM LOGIN: ", emailVar);
-      console.log("FORM SENHA: ", senhaVar);
+      console.log("Email capturado: ", emailVar);
+      console.log("Senha capturada: ", senhaVar);
 
       fetch("/usuarios/autenticar", {
           method: "POST",
@@ -131,12 +127,8 @@
                   sessionStorage.EMAIL_USUARIO = json.email;
                   sessionStorage.NOME_USUARIO = json.nomeCompleto;
                   sessionStorage.ID_USUARIO = json.idUsuario;
-                  // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
-                  // setTimeout(function () {
-                      window.location = "./dashboard/dashboard.html";
-                  // }, 1000); // apenas para exibir o loading
-
+                  window.location = "./dashboard/dashboard.html";
               });
 
           } else {
@@ -156,9 +148,6 @@
       return false;
   }
 
-  // function sumirMensagem() {
-  //     cardErro.style.display = "none"
-  // }
 }
 </script>
 
