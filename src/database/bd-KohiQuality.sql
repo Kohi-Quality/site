@@ -1,4 +1,7 @@
+CREATE DATABASE KohiQuality;
+
 USE KohiQuality;
+
 CREATE TABLE suporte (
 idSuporte int primary key auto_increment,
 nome varchar(45),
@@ -94,7 +97,7 @@ select usuario.nomeCompleto as 'Nome Usuário',
     
 SELECT COUNT(idUsuario) as 'Quantidade de usuários' FROM usuario;
 
-CREATE TABLE Silo (
+CREATE TABLE silo (
 idSilo int auto_increment,
 nome varchar(45),
 fkFazenda int,
@@ -177,18 +180,10 @@ fkSensor int,
 		references sensores(idSensor),
 temperatura float,
 umidade float,
-data_hora datetime);
+data_hora datetime default current_timestamp);
 
 INSERT INTO medida VALUES
-(default,1, 24, 65.1, '2024-05-09 12:00'),
-(default,1, 22, 65.8, '2024-05-09 13:00'),
-(default,1, 23, 66.2, '2024-05-09 14:00'),
-(default,1, 15, 65.4, '2024-05-09 15:00'),
-(default,1, 12, 65.2, '2024-05-09 16:00'),
-(default,1, 9, 65.9, '2024-05-09 17:00'),
-(default,2, 12.5, 63.7, '2024-05-09 16:30'),
-(default,3, 24.8, 63.1, '2024-05-09 17:00'),
-(default,4, 22.1, 64.3, '2024-05-09 06:00');
+(default,1, 22.1, 64.3, '2024-06-06 17:09:25');
 
 SELECT * FROM medida;
      
