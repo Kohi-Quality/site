@@ -428,3 +428,7 @@ a{
 #toggleButton.expandido::before {
     transform: rotate(180deg);
 }
+
+.hide {
+    display: none;
+}
