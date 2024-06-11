@@ -33,8 +33,10 @@
                 <h4 class="mensagem">Bem-vindo(a) ao seu silo</h4>
             </div>
 
-            <button onclick="">Status</button>
-            <button onclick="grafico()">Gráficos</button>
+            <div class="buttons">
+                <button onclick="">Status</button>
+                <button onclick="window.location = 'grafico_alfa.html'">Gráficos</button>
+            </div>
 
         </div>
     </div>
@@ -54,57 +56,100 @@
             <div class="nome_armazem">
                 <h1>SILO ALFA</h1>
             </div>
-
-            
         </div>
 
         <div class="body-dash">
-            <div class="armazem">
 
-                <div class="temperatura">
+            <div class="container-umidade">
+
+            <div class="area-parametros-alerta">
+                <p class="titulo-legenda">
+                    Legenda Umidade
+                </p>
+                <div class="parametros-alerta">
+                    <div class="item-regua perigo-frio">
+                        <p>Perigo</p>
+                        <p>&lt;=5°C</p>
+                    </div>
+                    <div class="item-regua alerta-frio">
+                        <p>Alerta</p>
+                        <p>&lt;=10°C</p>
+                    </div>
+                    <div class="item-regua ideal">
+                        <p>Ideal</p>
+                        <p>20°C</p>
+                    </div>
+                    <div class="item-regua alerta-quente">
+                        <p>Alerta</p>
+                        <p>&gt;=22°C</p>
+                    </div>
+                    <div class="item-regua perigo-quente">
+                        <p>Perigo</p>
+                        <p>&gt;=23°C</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="umidade">
+
+                <div class="umidade_atual">
                     <h2>Umidade atual:</h2>
                     <h3>54%</h3>
                 </div>
 
-                <div class="umidade">
+                <div class="status_umidade" id="status_umidade">
+                    <span id="span_status_umidade"><b>Status de Umidade</b></span><br>
+                    <span id="span_umidade"></span>
+                </div>
+
+            </div>
+</div>
+
+<div class="container-temperatura">
+            <div class="area-parametros-alerta">
+                <p class="titulo-legenda">
+                    Legenda Temperatura
+                </p>
+                <div class="parametros-alerta">
+                    <div class="item-regua perigo-frio">
+                        <p>Perigo</p>
+                        <p>&lt;=5°C</p>
+                    </div>
+                    <div class="item-regua alerta-frio">
+                        <p>Alerta</p>
+                        <p>&lt;=10°C</p>
+                    </div>
+                    <div class="item-regua ideal">
+                        <p>Ideal</p>
+                        <p>20°C</p>
+                    </div>
+                    <div class="item-regua alerta-quente">
+                        <p>Alerta</p>
+                        <p>&gt;=22°C</p>
+                    </div>
+                    <div class="item-regua perigo-quente">
+                        <p>Perigo</p>
+                        <p>&gt;=23°C</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="temperatura">
+
+                <div class="temperatura_atual">
                     <h2>Temperatura Atual:</h2>
                     <h3>18.5ºC</h3>
                 </div>
 
-            </div>
-
-            <div class="container1">
-                <div class="menu">
-                    <div class="status_umidade" id="status_umidade">
-                        <span id="span_status_umidade"><b>Status de Umidade</b></span><br>
-                        <span id="span_umidade"></span>
-                    </div>
-                    <div class="status_temperatura" id="status_temperatura">
-                        <span id="span_status"><b>Status de Temperatura</b></span><br>
-                        <span id="span_temperatura"></span>
-                    </div>
+                <div class="status_temperatura" id="status_temperatura">
+                    <span id="span_status"><b>Status de Temperatura</b></span><br>
+                    <span id="span_temperatura"></span>
                 </div>
 
-
+</div>
             </div>
 
-        </div>
-
-        <div class="body-dash2 hide">
-            <div class="graficos_linha">
-                <div class="umid">
-                    <h1>Sensor DHT 11 - Umidade</h1>
-                    <section class="graficos">
-                        <canvas id="dht11Temperatura"></canvas>
-                    </section>
-                </div>
-                <div class="temp">
-                    <h1>Sensor DHT 11 - Temperatura</h1>
-                    <section class="graficos">
-                        <canvas id="dht11Umidade"></canvas>
-                    </section>
-                </div>
-            </div>
         </div>
 
 </body>
@@ -114,10 +159,6 @@
 <script>
 
     idUsuario.innerHTML = sessionStorage.NOME_USUARIO;
-
-    function grafico() {
-
-    }
 
     var temp_atual = 25;
     var umid_atual = 59;
@@ -238,19 +279,19 @@
 
     let divVisivel = false; // Variável para controlar o estado da div
 
-function toggleDiv() {
-    const minhaDiv = document.querySelector('.legenda'); // Seleciona a div
-    const toggleButton = document.getElementById('toggleButton'); // Seleciona o botão
+    function toggleDiv() {
+        const minhaDiv = document.querySelector('.legenda'); // Seleciona a div
+        const toggleButton = document.getElementById('toggleButton'); // Seleciona o botão
 
-    if (divVisivel) {
-        minhaDiv.style.height = '0'; // Recolhe a div se estiver visível
-        toggleButton.classList.remove('expandido'); // Remove a classe 'expandido' do botão
-    } else {
-        minhaDiv.style.height = '600px'; // Expandir a div se estiver recolhida
-        toggleButton.classList.add('expandido'); // Adiciona a classe 'expandido' ao botão
+        if (divVisivel) {
+            minhaDiv.style.height = '0'; // Recolhe a div se estiver visível
+            toggleButton.classList.remove('expandido'); // Remove a classe 'expandido' do botão
+        } else {
+            minhaDiv.style.height = '600px'; // Expandir a div se estiver recolhida
+            toggleButton.classList.add('expandido'); // Adiciona a classe 'expandido' ao botão
+        }
+        divVisivel = !divVisivel; // Inverte o estado da div
     }
-    divVisivel = !divVisivel; // Inverte o estado da div
-}
 
 
 </script>

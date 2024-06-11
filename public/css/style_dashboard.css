@@ -118,7 +118,7 @@ body {
     width: 250px;
     height: 75px;
     background-color: #E3E8EC;
-    border: black solid 10px;
+    border: black solid 5px;
     border-radius: 50px;
 }
 
@@ -129,7 +129,7 @@ body {
     width: 250px;
     height: 75px;
     background-color: #E3E8EC;
-    border: #10e433 solid 10px;
+    border: #10e433 solid 5px;
     border-radius: 50px;
 }
 
@@ -140,7 +140,7 @@ body {
     width: 250px;
     height: 75px;
     background-color: #E3E8EC;
-    border: #e65f05 solid 10px;
+    border: #e65f05 solid 5px;
     border-radius: 50px;
 }
 
@@ -151,7 +151,7 @@ body {
     width: 250px;
     height: 75px;
     background-color: #E3E8EC;
-    border: solid 10px;
+    border: solid 5px;
     animation: BorderAlerta 0.5s infinite;
     border-radius: 50px;
 }
@@ -187,8 +187,8 @@ h3{
     background-color: #E3E8EC;
     opacity: 90%;
     color: black;
-    border-radius: 20px;
-    border: #556946 solid 15px;
+    border-radius: 30px;
+    border: #0bdb0b solid 8px;
     font-weight: bold;
 }
 
@@ -202,8 +202,8 @@ h3{
     background-color: #E3E8EC;
     opacity: 90%;
     color: black;
-    border-radius: 20px;
-    border: solid 15px;
+    border-radius: 30px;
+    border: solid 8px;
     font-weight: bold;
     animation: BorderAlerta 0.5s infinite;
 }
@@ -218,8 +218,8 @@ h3{
     background-color: #E3E8EC;
     opacity: 90%;
     color: black;
-    border-radius: 20px;
-    border: #df470b solid 15px;
+    border-radius: 30px;
+    border: orange solid 8px;
     font-weight: bold;
 }
 
@@ -234,7 +234,7 @@ h4{
     margin-bottom: 10px;
     width: 200px;
     height: 50px;
-    border: solid #0bdb0b 10px;
+    border: solid #0bdb0b 5px;
     border-radius: 20px;
 }
 
@@ -245,7 +245,7 @@ h4{
     margin-bottom: 10px;
     width: 200px;
     height: 50px;
-    border: solid 10px;
+    border: solid 5px;
     border-radius: 20px;
     animation: BorderAlerta 0.5s infinite;
 }
@@ -257,7 +257,7 @@ h4{
     margin-bottom: 10px;
     width: 200px;
     height: 50px;
-    border: solid #724A24 10px;
+    border: solid orange 5px;
     border-radius: 20px;
 }
 
