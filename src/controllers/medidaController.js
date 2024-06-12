@@ -1,16 +1,15 @@
 var medidaModel = require("../models/medidaModel");
 
-function buscarUltimasMedidas(req, res) {
+function buscarUltimasMedidas_Alfa(req, res) {
 
-    const limite_linhas = 7;
-
-    var idAquario = req.params.idAquario;
+    const limite_linhas = 30;
 
     console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
 
-    medidaModel.buscarUltimasMedidas(idAquario, limite_linhas).then(function (resultado) {
+    medidaModel.buscarUltimasMedidas_Alfa(limite_linhas).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
+            console.log(resultado)
         } else {
             res.status(204).send("Nenhum resultado encontrado!")
         }
@@ -42,7 +41,7 @@ function buscarMedidasEmTempoReal(req, res) {
 }
 
 module.exports = {
-    buscarUltimasMedidas,
+    buscarUltimasMedidas_Alfa,
     buscarMedidasEmTempoReal
 
 }

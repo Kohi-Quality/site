@@ -125,7 +125,7 @@ button:hover {
     height: 50px;
     justify-content: center;
     align-items: center;
-    background-color: #f1dec3;
+    background-color: #E3E8EC;
     border-radius: 25px;
     font-weight: bold;
     font-size: 25px;
@@ -135,13 +135,10 @@ button:hover {
 .area-parametros-alerta {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 70%;
     margin: auto;
     margin-top: 10px;
-    border-radius: 15px;
-    justify-content: space-around;
-    background-color: #180d08;
-
+    background-color: #212124;
 }
 
 .area-parametros-alerta .titulo-legenda {
@@ -149,13 +146,11 @@ button:hover {
     font-weight: 600;
     width: fit-content;
     margin: 10px 20px;
-    font-size: medium;
 }
 
 .parametros-alerta {
-    width: 70%;
     display: flex;
-    justify-content: space-between;
+    width: 100%;
 }
 
 .item-regua {
@@ -166,7 +161,6 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     align-self: center;
-    border-radius: 15px;
 }
 
 .item-regua p {
@@ -179,15 +173,15 @@ button:hover {
 }
 
 .perigo-frio {
-    background-color: #808fe4;
+    background-color: #5c6bc0;
 }
 
 .perigo-quente {
-    background-color: #dc481b;
+    background-color: #ff7043;
 }
 
 .alerta-frio {
-    background-color: #2377bd;
+    background-color: #42a5f5;
 }
 
 .alerta-quente {
@@ -195,7 +189,7 @@ button:hover {
 }
 
 .ideal {
-    background-color: #556946;
+    background-color: #9ccc65;
 }
 
 
@@ -228,7 +222,6 @@ button:hover {
     padding: 10px;
     border: solid 2px gray;
     border-radius: 15px;
-     background-color: #ccb89c;
 }
 
 .temperatura {
@@ -256,7 +249,6 @@ button:hover {
     border: solid 2px gray;
     border-radius: 15px;
     text-align: center;
-    background-color: #ccb89c;
 }
 
 .umidade {

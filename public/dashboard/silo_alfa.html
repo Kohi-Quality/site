@@ -2,14 +2,12 @@
 <html>
 
 <head>
-    <title>Silo Beta - Kohi Quality</title>
+    <title>Silo - Kohi Quality</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <link rel="stylesheet" href="../css/style_silo.css">
-    <link rel="icon" href="../assets/LogoKohiPronto.png" type="image/x-icon">
+    <link rel="icon" href="../css/style_armazem.css" type="image/x-icon">
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
     <style>
         canvas {
             -moz-user-select: none;
@@ -25,7 +23,7 @@
 
     <div class="aside">
         <div class="container">
-            
+
             <div class="logo">
                 <img src="../assets/LogoKohiPronto.png">
             </div>
@@ -38,28 +36,29 @@
             <div class="buttons">
                 <button onclick="">Status</button>
                 <button onclick="window.location = 'grafico_alfa.html'">Gráficos</button>
+                <button><a href="">Suporte</a></button>
             </div>
+
         </div>
     </div>
 
     <div class="dash">
 
         <div class="header-dash">
-            
+
             <div class="navbar">
                 <ul class="nav">
                     <a href="dashboard.html">
                         <li class="item-menu">Voltar</li>
-                    </a> 
+                    </a>
                 </ul>
             </div>
-            
+
             <div class="nome_armazem">
-                <h1>SILO BETA</h1>
+                <h1>SILO ALFA</h1>
             </div>
-            
         </div>
-        
+
         <div class="body-dash">
 
             <div class="container-umidade">
@@ -71,33 +70,31 @@
                     <div class="parametros-alerta">
                         <div class="item-regua perigo-frio">
                             <p>Perigo</p>
-                            <p>&lt;= 50%</p>
+                            <p>&lt;=5°C</p>
                         </div>
                         <div class="item-regua alerta-frio">
                             <p>Alerta</p>
-                            <p>&lt;= 51%</p>
+                            <p>&lt;=10°C</p>
                         </div>
                         <div class="item-regua ideal">
                             <p>Ideal</p>
-                            <p>55%</p>
+                            <p>20°C</p>
                         </div>
                         <div class="item-regua alerta-quente">
                             <p>Alerta</p>
-                            <p>&gt;=59%</p>
+                            <p>&gt;=22°C</p>
                         </div>
                         <div class="item-regua perigo-quente">
                             <p>Perigo</p>
-                            <p>&gt;=60%</p>
+                            <p>&gt;=23°C</p>
                         </div>
                     </div>
                 </div>
 
 
                 <div class="umidade">
-                    <div class="umidade_atual">
-                        <h2>Umidade atual:</h2>
-                        <h3>62%</h3>
-                    </div>
+
+                    <div class="umidade_atual" id="umidade_atual"></div>
 
                     <div class="status_umidade" id="status_umidade">
                         <span id="span_status_umidade"><b>Status de Umidade</b></span><br>
@@ -106,6 +103,7 @@
 
                 </div>
             </div>
+
             <div class="container-temperatura">
                 <div class="area-parametros-alerta">
                     <p class="titulo-legenda">
@@ -114,33 +112,30 @@
                     <div class="parametros-alerta">
                         <div class="item-regua perigo-frio">
                             <p>Perigo</p>
-                            <p>&lt;=10ºC</p>
+                            <p>&lt;=5°C</p>
                         </div>
                         <div class="item-regua alerta-frio">
                             <p>Alerta</p>
-                            <p>&lt;=12ºC</p>
+                            <p>&lt;=10°C</p>
                         </div>
                         <div class="item-regua ideal">
                             <p>Ideal</p>
-                            <p>22°C</p>
+                            <p>20°C</p>
                         </div>
                         <div class="item-regua alerta-quente">
                             <p>Alerta</p>
-                            <p>&gt;=21ºC</p>
+                            <p>&gt;=22°C</p>
                         </div>
                         <div class="item-regua perigo-quente">
                             <p>Perigo</p>
-                            <p>&gt;=24°C</p>
+                            <p>&gt;=23°C</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="temperatura">
 
-                    <div class="temperatura_atual">
-                        <h2>Temperatura Atual:</h2>
-                        <h3>24ºC</h3>
-                    </div>
+                    <div class="temperatura_atual" id="temperatura_atual"></div>
 
                     <div class="status_temperatura" id="status_temperatura">
                         <span id="span_status"><b>Status de Temperatura</b></span><br>
@@ -149,134 +144,81 @@
 
                 </div>
             </div>
-        
-        
+
         </div>
-    </div>
 
 </body>
 
 </html>
 
 <script>
-    
-     idUsuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    idUsuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function medidaAlfa() {
+
+        fetch(`/medidas/buscarUltimasMedidas_Alfa/`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    verificacao_kpi(resposta);
+                    sessionStorage.Temperatura = resposta.temperatura
+                    sessionStorage.Umidade = resposta.umidade
+        });
+    } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+    }
+})
+.catch(function (error) {
+    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+});
+}
+
+
+function verificacao_kpi(resposta) {
+    var tamanho = resposta.length;
+    var registro = resposta[tamanho - 1]
+    var temperaturaAtual = registro.temperatura;
+    var umidadeAtual = registro.umidade;
+    umidade_atual.innerHTML = `<b>UMIDADE ATUAL:<br> ${umidadeAtual}%</b>`;
+    temperatura_atual.innerHTML = `<b>TEMPERATURA ATUAL:<br> ${temperaturaAtual}ºC</b>`;
 
     var temp_atual = 25;
     var umid_atual = 59;
 
-    if (temp_atual < 10) {
+    if (temperaturaAtual < 10) {
         span_temperatura.innerHTML = "<b>TEMPERATURA ABAIXO DO RECOMENDADO</b>"
         status_temperatura.style = `background-color: #CA4224;`;
-    } else if (temp_atual <= 12) {
+    } else if (temperaturaAtual <= 12) {
         span_temperatura.innerHTML = "Fique atento, a temperatura está abaixando"
         status_temperatura.style = `background-color: #E9500F`;
-    } else if (temp_atual <= 21) {
+    } else if (temperaturaAtual <= 21) {
         span_temperatura.innerHTML = "Fique atento, a temperatura está subindo"
         status_temperatura.style = `background-color: #E9500F`;
-    } else if (temp_atual > 23) {
+    } else if (temperaturaAtual > 23) {
         span_temperatura.innerHTML = "<b>TEMPERATURA ACIMA DO RECOMENDADO</b>"
         status_temperatura.style = `background-color: #D72418`;
     }
 
-    if (umid_atual < 50) {
+    if (umidadeAtual < 50) {
         span_umidade.innerHTML = "<b>UMIDADE ABAIXO DO RECOMENDADO</b>"
         status_umidade.style = `background-color: #D72418`;
-    } else if (umid_atual <= 51 && umid_atual >= 52) {
+    } else if (umidadeAtual <= 51 && umid_atual >= 52) {
         span_umidade.innerHTML = "Fique atento, a umidade está abaixando"
         status_umidade.style = `background-color: #FD8211`;
-    } else if (umid_atual >= 59 && umid_atual <= 60) {
+    } else if (umidadeAtual >= 59 && umid_atual <= 60) {
         span_umidade.innerHTML = "Fique atento, a umidade está subindo"
         status_umidade.style = `background-color: #FD8211`;
-    } else if (umid_atual > 60) {
+    } else if (umidadeAtual > 60) {
         span_umidade.innerHTML = "<b>UMIDADE ACIMA DO RECOMENDADO</b>"
         status_umidade.style = `background-color: #D72418`;
     }
+}
 
-    var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
-    contextoDht11Umidade.canvas.width = 1000;
-    contextoDht11Umidade.canvas.height = 300;
-    Chart.defaults.backgroundColor = '#2E1402';
-    Chart.defaults.borderColor = '#2E1402';
-    Chart.defaults.fontcolor = '#2E1402';
 
-    var dht11Umidade = new Chart(
-        contextoDht11Umidade,
-        {
-            type: 'line',
-            data: {
-                labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
-                datasets: [{
-                    label: 'Temperatura',
-                    data: [30, 29, 28, 25, 22, 23],
-                    borderColor: ['#6aa0b9'],
-                    backgroundColor: ['#6aa0b9']
-                }]
-            },
-            options: {
-                scales: {
-                    xAxes: [{
-                        distribution: 'series',
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }],
-                    yAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Temperatura'
-                        },
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                },
-                animation: {
-                    duration: 0
-                }
-            }
-        }
-    );
-
-    var contextoDht11Temperatura = document.getElementById('dht11Temperatura').getContext('2d');
-    contextoDht11Temperatura.canvas.width = 1000;
-    contextoDht11Temperatura.canvas.height = 300;
-    var dht11Temperatura = new Chart(
-        contextoDht11Temperatura,
-        {
-            type: 'line',
-            data: {
-                labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
-                datasets: [{
-                    label: "Umidade",
-                    data: [65.1, 65.8, 66.2, 65.4, 65.2, 65.9],
-                    borderColor: ['#ff3232'],
-                    backgroundColor: ['#ff3232']
-                }]
-            },
-            options: {
-                scales: {
-                    xAxes: [{
-                        distribution: 'series',
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }],
-                    yAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Umidade'
-                        },
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                },
-                animation: {
-                    duration: 0
-                }
-            }
-        }
-    );
+    setInterval(() => {
+        medidaAlfa()
+    }, 2000);
 
 </script>
