@@ -2,12 +2,14 @@
 <html>
 
 <head>
-    <title>Silo - Kohi Quality</title>
+    <title>Silo Beta - Kohi Quality</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <link rel="icon" href="../css/style_armazem.css" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style_silo.css">
+    <link rel="icon" href="../assets/LogoKohiPronto.png" type="image/x-icon">
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <style>
         canvas {
             -moz-user-select: none;
@@ -23,7 +25,7 @@
 
     <div class="aside">
         <div class="container">
-
+            
             <div class="logo">
                 <img src="../assets/LogoKohiPronto.png">
             </div>
@@ -37,27 +39,27 @@
                 <button onclick="">Status</button>
                 <button onclick="window.location = 'grafico_alfa.html'">Gráficos</button>
             </div>
-
         </div>
     </div>
 
     <div class="dash">
 
         <div class="header-dash">
-
+            
             <div class="navbar">
                 <ul class="nav">
                     <a href="dashboard.html">
                         <li class="item-menu">Voltar</li>
-                    </a>
+                    </a> 
                 </ul>
             </div>
-
+            
             <div class="nome_armazem">
-                <h1>SILO ALFA</h1>
+                <h1>SILO BETA</h1>
             </div>
+            
         </div>
-
+        
         <div class="body-dash">
 
             <div class="container-umidade">
@@ -94,7 +96,7 @@
                 <div class="umidade">
                     <div class="umidade_atual">
                         <h2>Umidade atual:</h2>
-                        <h3>52%</h3>
+                        <h3>62%</h3>
                     </div>
 
                     <div class="status_umidade" id="status_umidade">
@@ -104,7 +106,6 @@
 
                 </div>
             </div>
-
             <div class="container-temperatura">
                 <div class="area-parametros-alerta">
                     <p class="titulo-legenda">
@@ -138,7 +139,7 @@
 
                     <div class="temperatura_atual">
                         <h2>Temperatura Atual:</h2>
-                        <h3>20ºC</h3>
+                        <h3>24ºC</h3>
                     </div>
 
                     <div class="status_temperatura" id="status_temperatura">
@@ -148,16 +149,18 @@
 
                 </div>
             </div>
-
+        
+        
         </div>
+    </div>
 
 </body>
 
 </html>
 
 <script>
-
-    idUsuario.innerHTML = sessionStorage.NOME_USUARIO;
+    
+     idUsuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     var temp_atual = 25;
     var umid_atual = 59;
@@ -275,22 +278,5 @@
             }
         }
     );
-
-    let divVisivel = false; // Variável para controlar o estado da div
-
-    function toggleDiv() {
-        const minhaDiv = document.querySelector('.legenda'); // Seleciona a div
-        const toggleButton = document.getElementById('toggleButton'); // Seleciona o botão
-
-        if (divVisivel) {
-            minhaDiv.style.height = '0'; // Recolhe a div se estiver visível
-            toggleButton.classList.remove('expandido'); // Remove a classe 'expandido' do botão
-        } else {
-            minhaDiv.style.height = '600px'; // Expandir a div se estiver recolhida
-            toggleButton.classList.add('expandido'); // Adiciona a classe 'expandido' ao botão
-        }
-        divVisivel = !divVisivel; // Inverte o estado da div
-    }
-
 
 </script>
