@@ -419,12 +419,15 @@ a:hover {
     -xpedu-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.05);
+
+    color: #E3E8EC;
 }
 
 a {
     width: 250px;
     height: 100px;
     text-decoration: none;
+    color: #556946;
 }
 
 .graficos_linha {
