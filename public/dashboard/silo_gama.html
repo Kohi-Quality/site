@@ -18,7 +18,7 @@
             user-select: none;
         }
     </style>
-    <link rel="icon" href="../css/style_armazem.css" type="image/x-icon">
+     <link rel="stylesheet" href="../css/style_silo.css">
 </head>
 
 <body>
@@ -31,34 +31,15 @@
             </div>
 
             <div class="texto">
-                <h2>Olá, Cliente</h2>
+                <h2>Olá, <span id="idUsuario"></span></h2>
                 <h4 class="mensagem">Bem-vindo(a) ao seu silo</h4>
             </div>
 
-            <div class="legenda">
-                <h4>Legenda Umidade:</h4>
-
-                <div class="oscilando">
-                    <p>Alerta de umidade alta: 59% - 
-                        Alerta de umidade baixa: 51%</p>
-                </div>
-
-                <div class="instavel">
-                    <p>Alerta vermelho: acima de 60% e abaixo de 50%</p>
-                </div>
-
-                <h4>Legenda Temperatura:</h4>
-
-                <div class="oscilando">
-                    <p>Alerta de temperatura alta: 21ºC
-                        Alerta de temperatura baixa: 12ºC</p>
-                </div>
-
-                <div class="instavel">
-                    <p>Alerta vermelho: acima de 24ºC e abaixo de 10ºC</p>
-                </div>
-
+            <div class="buttons">
+                <button onclick="">Status</button>
+                <button onclick="window.location = 'grafico_alfa.html'">Gráficos</button>
             </div>
+          
         </div>
     </div>
 
@@ -82,49 +63,94 @@
         </div>
 
     <div class="body-dash">
-        <div class="armazem">
-    
-            <div class="temperatura">
-                <h2>Umidade atual:</h2>
-                <h3>51%</h3>
+        <div class="container-umidade">
+
+            <div class="area-parametros-alerta">
+                <p class="titulo-legenda">
+                    Legenda Umidade
+                </p>
+                <div class="parametros-alerta">
+                    <div class="item-regua perigo-frio">
+                        <p>Perigo</p>
+                        <p>&lt;= 50%</p>
+                    </div>
+                    <div class="item-regua alerta-frio">
+                        <p>Alerta</p>
+                        <p>&lt;= 51%</p>
+                    </div>
+                    <div class="item-regua ideal">
+                        <p>Ideal</p>
+                        <p>55%</p>
+                    </div>
+                    <div class="item-regua alerta-quente">
+                        <p>Alerta</p>
+                        <p>&gt;=59%</p>
+                    </div>
+                    <div class="item-regua perigo-quente">
+                        <p>Perigo</p>
+                        <p>&gt;=60%</p>
+                    </div>
+                </div>
             </div>
-    
+
+
             <div class="umidade">
-                <h2>Temperatura Atual:</h2>
-                <h3>14.5ºC</h3>
-            </div>
-    
-        </div>
-    
-        <div class="container1">
-            <div class="menu">
+                <div class="umidade_atual">
+                    <h2>Umidade atual:</h2>
+                    <h3>51%</h3>
+                </div>
+
                 <div class="status_umidade" id="status_umidade">
                     <span id="span_status_umidade"><b>Status de Umidade</b></span><br>
                     <span id="span_umidade"></span>
                 </div>
+
+            </div>
+        </div>
+
+        <div class="container-temperatura">
+            <div class="area-parametros-alerta">
+                <p class="titulo-legenda">
+                    Legenda Temperatura
+                </p>
+                <div class="parametros-alerta">
+                    <div class="item-regua perigo-frio">
+                        <p>Perigo</p>
+                        <p>&lt;=10ºC</p>
+                    </div>
+                    <div class="item-regua alerta-frio">
+                        <p>Alerta</p>
+                        <p>&lt;=12ºC</p>
+                    </div>
+                    <div class="item-regua ideal">
+                        <p>Ideal</p>
+                        <p>22°C</p>
+                    </div>
+                    <div class="item-regua alerta-quente">
+                        <p>Alerta</p>
+                        <p>&gt;=21ºC</p>
+                    </div>
+                    <div class="item-regua perigo-quente">
+                        <p>Perigo</p>
+                        <p>&gt;=24°C</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="temperatura">
+
+                <div class="temperatura_atual">
+                    <h2>Temperatura Atual:</h2>
+                    <h3>14.5ºC</h3>
+                </div>
+
                 <div class="status_temperatura" id="status_temperatura">
                     <span id="span_status"><b>Status de Temperatura</b></span><br>
                     <span id="span_temperatura"></span>
                 </div>
-            </div>
-    
-            <div class="graficos_linha">
-                <div class="umid">
-                    <h1>Sensor DHT 11 - Umidade</h1>
-                    <section class="graficos">
-                        <canvas id="dht11Temperatura"></canvas>
-                    </section>
-                </div>
-                <div class="temp">
-                    <h1>Sensor DHT 11 - Temperatura</h1>
-                    <section class="graficos">
-                        <canvas id="dht11Umidade"></canvas>
-                    </section>
-                </div>
-            </div>
-            
-        </div>
 
+            </div>
+        </div>
     </div>
     </div>
 
