@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Silo - Kohi Quality</title>
+    <title>Silo Alfa - Kohi Quality</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <link rel="icon" href="../css/style_armazem.css" type="image/x-icon">
@@ -78,7 +78,7 @@
                         </div>
                         <div class="item-regua ideal">
                             <p>Ideal</p>
-                            <p>55%</p>
+                            <p>&gt;=52% && &lt;=58%</p>
                         </div>
                         <div class="item-regua alerta-quente">
                             <p>Alerta</p>
@@ -120,7 +120,7 @@
                         </div>
                         <div class="item-regua ideal">
                             <p>Ideal</p>
-                            <p>22°C</p>
+                            <p>&gt;=13°C && &lt;=20ºC</p>
                         </div>
                         <div class="item-regua alerta-quente">
                             <p>Alerta</p>
@@ -183,9 +183,6 @@ function verificacao_kpi(resposta) {
     var umidadeAtual = registro.umidade;
     umidade_atual.innerHTML = `<b>UMIDADE ATUAL:<br> ${umidadeAtual}%</b>`;
     temperatura_atual.innerHTML = `<b>TEMPERATURA ATUAL:<br> ${temperaturaAtual}ºC</b>`;
-
-    var temp_atual = 25;
-    var umid_atual = 59;
 
     if (temperaturaAtual <= 10) {
         span_temperatura.innerHTML = "<b>TEMPERATURA ABAIXO DO RECOMENDADO</b>"
