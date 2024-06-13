@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <script type="text/javascript" src="../site/js/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -90,7 +89,7 @@
                 gerando grande perda nas sacas produzidas, evidenciando a necessidade avanços tecnológicos mais
                 especificamente voltados à essa parte da produção.</p>
 
-        
+
         </div>
     </div>
 
@@ -161,7 +160,7 @@
     </div>
 
 
-    
+
 
     <div class="section5" id="section5">
         <h1>Faça uma simulação conosco!</h1>
@@ -199,7 +198,7 @@
         <h3 class="mensagem">Mensagem:</h3>
         <input type="text" id="ipt_mensagem" placeholder="  (Máximo 500 caracteres)" min="0" max="500"
             class="input_msg">
-        <button onclick="">ENVIAR</button>
+        <button onclick="enviarLeed()">ENVIAR</button>
     </div>
 
     <div class="linha_footer"></div>
@@ -218,3 +217,107 @@
 </body>
 
 </html>
+
+<script>
+    function enviarLeed() {
+        var nome = ipt_nome.value
+        var email = ipt_email.value
+        var mensagem = ipt_mensagem.value
+
+        fetch("/leed/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                nomeServer: nome,
+                emailServer: email,
+                mensagemServer: mensagem
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", JSON.stringify(resposta));
+
+                if (resposta.ok) {
+                    alert("Mensagem enviada com sucesso!")
+
+                    ipt_nome.value = ""
+                    ipt_email.value = ""
+                    ipt_mensagem.value = ""
+
+                    window.location.href = "cadastro.html"
+
+                } else {
+                    throw "Houve um erro ao tentar realizar o cadastro de leed!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`ERRO: ${resposta}`);
+            });
+
+        return false;
+    }
+
+
+
+
+    // CALCULADORA FINANCEIRA
+
+
+    var ValorArabica = Number(1015 / 60).toFixed(2); // valor de 1 Kg de Arábica
+    var ValorConilon = Number(864 / 60).toFixed(2); // valor de 1 Kg de Conilon
+
+    var Porcentagem = Number(0.2); // redução de perdas com nossos serviços
+
+    function calcular() {
+        div1.style = `display: flex`;
+        div1.innerHTML = ` `; // Apaga a simulação anterior
+        var Produzidos = Number(inProduzido.value); // Sacas produzidas por ano
+        var KgProduzidos = Produzidos * 60; // Kg produzidos por ano
+        var Perdido = Number(inPerda.value); // Kg perdidos por ano
+        var option = opcoes.value; // Tipo escolhido de café
+        var Total = KgProduzidos - Perdido; // Quantidade inicial de Kg de café sem nossos serviços
+
+        var TotalPerda = Perdido * Porcentagem; // Total de perdas com a redução dos nossos serviços
+        var QuantidadeFinal = KgProduzidos - TotalPerda; // Quantidade final de Kg de café com nossos serviços
+
+        if (option == "#") {
+            div1.innerHTML = `<div style="color: red;"><b>SELECIONE UM TIPO DE CAFÉ VÁLIDO PARA A SIMULAÇÂO!</b></div>`
+        } else {
+            if (option == "1") { // tipo de café = Arábico
+                var tipo = "Arábica";
+                Total *= ValorArabica; // Aproveitamento sem nossos serviços
+                QuantidadeFinal *= ValorArabica; // Novo aproveitamento
+            }
+            if (option == "2") { // tipo de café = Conilon
+                var tipo = "Conilon";
+                Total *= ValorConilon; // Aproveitamento sem nossos serviços
+                QuantidadeFinal *= ValorConilon; // Novo aproveitamento
+            }
+
+            var diferenca = QuantidadeFinal - Total;
+
+            div1.innerHTML =
+                `<span>
+        <h2 class="H2">Simulando:</h2>
+        Ao <span style="color: red;">NÃO</span> utilizar nossos processos de controle, você tem lucro final de café tipo ${tipo} de <span style="color: red;"> ${Total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>.
+        <br><br>    
+        Seus lucros vão para <span style="color: green;">${QuantidadeFinal.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span> ao utilizar nossos serviços na Kohi Quality.
+        <br><br><br>
+        Gerando a diferença de <span style="color: green;">${diferenca.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>
+        <br>
+        <span class="H2">Informações de Mercado:</span>
+        <br><br>
+        Peso padrão por saca: 60Kg
+        <br><br>
+        Preço da saca Árabica: R$1.015,00
+        <br><br>
+        Preço da saca Conilon: R$864,00
+        <br><br>
+        `;
+        }
+    }
+
+
+
+</script>
