@@ -78,7 +78,7 @@
                         </div>
                         <div class="item-regua ideal">
                             <p>Ideal</p>
-                            <p>55%</p>
+                            <p>&gt;=52% && &lt;=58%</p>
                         </div>
                         <div class="item-regua alerta-quente">
                             <p>Alerta</p>
@@ -120,7 +120,7 @@
                         </div>
                         <div class="item-regua ideal">
                             <p>Ideal</p>
-                            <p>22°C</p>
+                            <p>&gt;=13°C && &lt;=20ºC</p>
                         </div>
                         <div class="item-regua alerta-quente">
                             <p>Alerta</p>
@@ -191,7 +191,7 @@ function verificacao_kpi(resposta) {
     } else if (temperaturaAtual <= 12) {
         span_temperatura.innerHTML = "Fique atento, a temperatura está abaixando"
         status_temperatura.style = `background-color: #E9500F`;
-    } else if (temperaturaAtual == 22) {
+    } else if (temperaturaAtual >= 13 && temperaturaAtual <= 20) {
         span_temperatura.innerHTML = "A temperatura está ideal"
         status_temperatura.style = `background-color: 9CCC65`;
     }else if (temperaturaAtual >= 21) {
@@ -208,7 +208,7 @@ function verificacao_kpi(resposta) {
     } else if (umidadeAtual <= 51) {
         span_umidade.innerHTML = "Fique atento, a umidade está abaixando"
         status_umidade.style = `background-color: #FD8211`;
-    } else if (temperaturaAtual == 55) {
+    } else if (umidadeAtual >= 52 && umidadeAtual <=58) {
         span_temperatura.innerHTML = "A umidade está ideal"
         status_temperatura.style = `background-color: 9CCC65`;
     } else if (umidadeAtual >= 59) {
