@@ -1,18 +1,25 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #63B1BC;
     margin: 0;
     padding: 0;
+    background-image: url("../assets/jo-lanta-68KjM0kfsVo-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #container {
-    width: 80%;
+    background-color: rgba(183, 150, 107, 0.8);
+    width: 60%;
+    height: 500px;
     margin: 50px auto;
     text-align: center;
+    border-radius: 5px;
+    padding: 20px;
 }
 
 h1 {
-    color: #1F2A44;
+    color: #556946;
+    font-size: 40px;
 }
 
 textarea[type="text"] {
@@ -20,6 +27,7 @@ textarea[type="text"] {
     font-size: 16px;
     border-radius: 5px;
     width: 400px;
+    margin-top: 20px;
 }
 
 select,
@@ -31,9 +39,14 @@ button {
 }
 
 button {
-    background-color: #ED145B;
+    background-color: #2E1402;
     color: #FFFFFF;
     border: none;
+    width: 150px;
+    height: 40px;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 button:hover {
