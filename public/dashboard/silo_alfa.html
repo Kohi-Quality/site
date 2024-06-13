@@ -187,16 +187,19 @@ function verificacao_kpi(resposta) {
     var temp_atual = 25;
     var umid_atual = 59;
 
-    if (temperaturaAtual < 10) {
+    if (temperaturaAtual <= 10) {
         span_temperatura.innerHTML = "<b>TEMPERATURA ABAIXO DO RECOMENDADO</b>"
         status_temperatura.style = `background-color: #CA4224;`;
     } else if (temperaturaAtual <= 12) {
         span_temperatura.innerHTML = "Fique atento, a temperatura está abaixando"
         status_temperatura.style = `background-color: #E9500F`;
-    } else if (temperaturaAtual <= 21) {
+    } else if (temperaturaAtual == 22) {
+        span_temperatura.innerHTML = "A temperatura está ideal"
+        status_temperatura.style = `background-color: 9CCC65`;
+    }else if (temperaturaAtual >= 21) {
         span_temperatura.innerHTML = "Fique atento, a temperatura está subindo"
         status_temperatura.style = `background-color: #E9500F`;
-    } else if (temperaturaAtual > 23) {
+    } else if (temperaturaAtual >= 24) {
         span_temperatura.innerHTML = "<b>TEMPERATURA ACIMA DO RECOMENDADO</b>"
         status_temperatura.style = `background-color: #D72418`;
     }
@@ -207,7 +210,10 @@ function verificacao_kpi(resposta) {
     } else if (umidadeAtual <= 51 && umid_atual >= 52) {
         span_umidade.innerHTML = "Fique atento, a umidade está abaixando"
         status_umidade.style = `background-color: #FD8211`;
-    } else if (umidadeAtual >= 59 && umid_atual <= 60) {
+    } else if (temperaturaAtual == 55) {
+        span_temperatura.innerHTML = "A umidade está ideal"
+        status_temperatura.style = `background-color: 9CCC65`;
+    } else if (umidadeAtual >= 59) {
         span_umidade.innerHTML = "Fique atento, a umidade está subindo"
         status_umidade.style = `background-color: #FD8211`;
     } else if (umidadeAtual > 60) {
